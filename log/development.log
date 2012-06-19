@@ -7117,3 +7117,54 @@ Served asset /jquery.js - 304 Not Modified (5ms)
 
 Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-06-19 11:17:17 +0200
 Served asset /agenda.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-19 11:31:24 +0200
+Processing by AgendaController#all as HTML
+  Rendered agenda/all.html.erb within layouts/application (43.5ms)
+Compiled application.css  (0ms)  (pid 3747)
+Completed 200 OK in 3527ms (Views: 80.2ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-06-19 11:31:28 +0200
+Served asset /agenda.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-19 11:31:28 +0200
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-06-19 11:31:28 +0200
+Served asset /agenda.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-19 11:31:28 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-19 11:32:34 +0200
+Processing by AgendaController#all as HTML
+  Rendered agenda/all.html.erb within layouts/application (42.8ms)
+Compiled agenda.css  (2ms)  (pid 3781)
+Compiled application.css  (5ms)  (pid 3781)
+Compiled jquery.js  (1ms)  (pid 3781)
+Compiled jquery_ujs.js  (0ms)  (pid 3781)
+Compiled agenda.js  (91ms)  (pid 3781)
+Compiled application.js  (114ms)  (pid 3781)
+Completed 200 OK in 3676ms (Views: 217.8ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-06-19 11:32:37 +0200
+Served asset /agenda.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-06-19 11:32:37 +0200
+Served asset /agenda.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-19 11:32:37 +0200
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-19 11:32:37 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
