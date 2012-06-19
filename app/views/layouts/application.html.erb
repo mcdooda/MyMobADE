@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Mob ADE</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    "http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css", :media => "all" %>
+  <%= javascript_include_tag "http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js" %>
+  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div data-role="page">
+
+  <div data-role="header">
+    <h1><%= @agenda_title %></h1>
+  </div>
+  
+  <div data-role="content">
+    <%= yield %>
+  </div>
+  
+</div>
+
+</body>
+</html>
