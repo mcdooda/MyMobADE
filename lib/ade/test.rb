@@ -13,7 +13,11 @@ r.select_project
 r.select_category
 r.select_branch
 r.select_table_view_options
-r.get_full_agenda.each do |activity|
+agenda = r.get_day_agenda
+
+agenda.each do |activity|
   puts activity
   puts
 end
+
+puts "#{agenda.length} activities"

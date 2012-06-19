@@ -7168,3 +7168,202 @@ Served asset /jquery.js - 304 Not Modified (5ms)
 
 Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-19 11:32:37 +0200
 Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-06-19 11:57:40 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/week.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 1626ms (Views: 32.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-19 11:57:42 +0200
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-06-19 11:57:42 +0200
+Served asset /agenda.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-19 11:57:42 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-06-19 11:57:42 +0200
+Served asset /agenda.js - 304 Not Modified (2ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-06-19 11:58:18 +0200
+Processing by AgendaController#week as HTML
+Completed 500 Internal Server Error in 1602ms
+
+ActionView::MissingTemplate (Missing template agenda/agenda#all, application/agenda#all with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/nicolas/dev/MyMobADE/app/views"
+):
+  app/controllers/agenda_controller.rb:33:in `week'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.3ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-06-19 11:58:39 +0200
+Processing by AgendaController#week as HTML
+Completed 500 Internal Server Error in 1794ms
+
+ActionView::MissingTemplate (Missing template agenda/agenda#all, application/agenda#all with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/nicolas/dev/MyMobADE/app/views"
+):
+  app/controllers/agenda_controller.rb:33:in `week'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.3ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-06-19 11:58:51 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/all.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 1813ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% @agenda_per_day.each do |date, activities| %>
+    2:   <ul data-role="listview" data-inset="true">
+    3:     <li data-role="list-divider"><%= date %></li>
+    4:     <% activities.each do |activity| %>
+  app/views/agenda/all.html.erb:1:in `_app_views_agenda_all_html_erb__1239500152658305253_69874724818500'
+  app/controllers/agenda_controller.rb:33:in `week'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.1ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-06-19 12:01:57 +0200
+Processing by AgendaController#week as HTML
+Completed 500 Internal Server Error in 1385ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/agenda_controller.rb:18:in `sort_agenda_per_day'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.4ms)
+
+
+Started GET "/agenda/all" for 127.0.0.1 at 2012-06-19 12:02:19 +0200
+Processing by AgendaController#all as HTML
+Completed 500 Internal Server Error in 1698ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/agenda_controller.rb:18:in `sort_agenda_per_day'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.8ms)
+
+
+Started GET "/agenda/all" for 127.0.0.1 at 2012-06-19 12:02:36 +0200
+Processing by AgendaController#all as HTML
+  Rendered agenda/all.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 2570ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% @agenda_per_day.each do |date, activities| %>
+    2:   <ul data-role="listview" data-inset="true">
+    3:     <li data-role="list-divider"><%= date %></li>
+    4:     <% activities.each do |activity| %>
+  app/views/agenda/all.html.erb:1:in `_app_views_agenda_all_html_erb__1239500152658305253_69874724818500'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.3ms)
+
+
+Started GET "/agenda/all" for 127.0.0.1 at 2012-06-19 12:05:35 +0200
+Processing by AgendaController#all as HTML
+  Rendered agenda/all.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 2560ms (Views: 49.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-19 12:05:37 +0200
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-06-19 12:05:37 +0200
+Served asset /agenda.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-06-19 12:05:37 +0200
+Served asset /agenda.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-19 12:05:37 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/agenda/day" for 127.0.0.1 at 2012-06-19 12:05:44 +0200
+Processing by AgendaController#day as HTML
+  Rendered agenda/day.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1351ms (Views: 26.0ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-06-19 12:05:45 +0200
+Served asset /agenda.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-06-19 12:05:45 +0200
+Served asset /agenda.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-19 12:05:45 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-19 12:05:45 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-06-19 12:05:51 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/all.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 1573ms (Views: 8.6ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-06-19 12:05:52 +0200
+Served asset /agenda.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-19 12:05:52 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-19 12:05:52 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-06-19 12:05:52 +0200
+Served asset /agenda.js - 304 Not Modified (0ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-06-19 14:45:23 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/all.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 1694ms (Views: 6.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-19 14:45:25 +0200
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-19 14:45:25 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-06-19 14:45:25 +0200
+Served asset /agenda.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-06-19 14:45:25 +0200
+Served asset /agenda.js - 304 Not Modified (0ms)

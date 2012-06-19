@@ -2,14 +2,18 @@ require 'rubygems'
 require 'mechanize'
 
 module Ade
-  
-  class Reader
+
+  class InteractiveReader
     
     def initialize(config)
       @config = config
       
       @agent = Mechanize.new
       @agent.user_agent = 'MyMobAde'
+      
+      @page = nil # kept between each user input
+      @branch_level = 1
+      @leaf = false
     end
     
     private
@@ -20,91 +24,108 @@ module Ade
     
     public
     
-    def login
-      page = get 'standard/index.jsp?lang=FR'
+    def login(login, password, domain)
+      @page = get 'standard/index.jsp?lang=FR'
       
-      login_form = page.form_with({ name: 'projects' })
-      if @config.domain
-        login_form.field_with({ name: 'username' }).value = @config.login
-        login_form.field_with({ name: 'password' }).value = @config.password
-        login_form.field_with({ name: 'domain' }).value = @config.domain
+      login_form = @page.form_with({ name: 'projects' })
+      if domain
+        login_form.field_with({ name: 'username' }).value = login
+        login_form.field_with({ name: 'password' }).value = password
+        login_form.field_with({ name: 'domain' }).value = domain
       else
-        login_form.field_with({ name: 'login' }).value = @config.login
-        login_form.field_with({ name: 'password' }).value = @config.password
+        login_form.field_with({ name: 'login' }).value = login
+        login_form.field_with({ name: 'password' }).value = password
       end
       
       @agent.submit login_form
     end
     
-    def select_project
-      page = get 'standard/projects.jsp'
+    def projects
+      @page = get 'standard/projects.jsp'
       
-      my_project_id = nil
-      page.parser.css('select[name=\'projectId\']').children.each do |option|
+      projects = []
+      
+      @page.parser.css('select[name=\'projectId\']').children.each do |option|
         project_id = option.get_attribute('value').to_i
         project_name = option.content.strip
-        my_project_id = project_id if @config.project == project_name
+        projects << { id: project_id, name: project_name }
       end
       
-      projects_form = page.form_with name: 'projects'
-      projects_form.field_with({ name: 'projectId' }).value = my_project_id
+      projects
+    end
+    
+    def project=(project)
+      projects_form = @page.form_with name: 'projects'
+      projects_form.field_with({ name: 'projectId' }).value = project[:id]
       
       @agent.submit projects_form
     end
     
-    def select_category
-      unless @config.branch_id
-        page = get 'standard/gui/tree.jsp'
+    def categories
+        @page = get 'standard/gui/tree.jsp'
+        
+        categories = []
         
         regex = /'(.+)'/
-        page.parser.css('.treeline').each do |div|
+        @page.parser.css('.treeline').each do |div|
           link = div.css('a')[1]
-          link_category = regex.match(link.get_attribute('href'))[1]
-          link_name = link.content.strip
-          @category = link_category if link_name == @config.resource_path[0]
+          category_id = regex.match(link.get_attribute('href'))[1]
+          category_name = link.content.strip
+          categories << { id: category_id, name: category_name }
         end
-      end
+        
+        categories
     end
     
-    def select_branch
-      if not @config.branch_id
-        page = get('standard/gui/tree.jsp?category=' + @category + '&expand=false&forceLoad=false&reload=false&scroll=0')
-        
-        regex = /\((.+),/
-        branch_id = nil
-        
-        (1...@config.resource_path.length).each do |i|
-          branch_id = nil
-          branch_name = @config.resource_path[i]
-          
-          if i < @config.resource_path.length - 1
-            page.parser.css('.treebranch a').each do |link|
-              link_branch_id = regex.match(link.get_attribute('href'))[1]
-              link_name = link.content.strip
-              branch_id = link_branch_id if link_name == branch_name
-            end
-            
-            page = get('standard/gui/tree.jsp?branchId=' + branch_id + '&expand=false&forceLoad=false&reload=false&scroll=0')
+    def category=(category)
+      @page = get('standard/gui/tree.jsp?category=' + category[:id] + '&expand=false&forceLoad=false&reload=false&scroll=0')
+    end
+    
+    def branches
+      branches = []
+      
+      branch_level_str = '&nbsp;' * 3 * @branch_level
+      branch_regex = /openBranch\((.+)\)/
+      item_regex = /check\((.+),/
+      
+      @page.encoding = 'ascii-8bit'
+      @page.parser.css('.treeline').each do |treeline|
+        treeline_str = treeline.to_s
+        if treeline_str.include? branch_level_str
+          match = branch_regex.match(treeline_str)
+          if match
+            branch_id = match[1]
+            branch_name = treeline.css('.treebranch a')[0].text
+            branches << { id: branch_id, name: branch_name }
           else
-            page.parser.css('.treeitem a').each do |link|
-              link_branch_id = regex.match(link.get_attribute('href'))[1]
-              link_name = link.content.strip
-              branch_id = link_branch_id if link_name == branch_name
-            end
-            
-            #page = get('standard/gui/tree.jsp?selectId=' + branch_id + '&reset=true&forceLoad=false&scroll=0')
-            page = get('custom/modules/plannings/direct_planning.jsp?resources=' + branch_id)
+            @leaf = true
+            branch_id = item_regex.match(treeline_str)[1]
+            branch_name = treeline.css('.treeitem a')[0].text
+            branches << { id: branch_id, name: branch_name }
           end
         end
+      end
+      
+      branches
+    end
+    
+    def branch=(branch)
+      if not @leaf
+        @page = get('standard/gui/tree.jsp?branchId=' + branch[:id] + '&expand=false&forceLoad=false&reload=false&scroll=0')
+        @branch_level += 1
       else
-        get('custom/modules/plannings/direct_planning.jsp?resources=' + @config.branch_id.to_s)
+        @page = get('custom/modules/plannings/direct_planning.jsp?resources=' + branch[:id])
       end
     end
     
-    def select_table_view_options
-      page = get 'custom/modules/plannings/appletparams.jsp'
+    def leaf?
+      @leaf
+    end
+    
+    def setup_table_view_options
+      @page = get 'custom/modules/plannings/appletparams.jsp'
       
-      options_form = page.form_with name: 'form12'
+      options_form = @page.form_with name: 'form12'
       
       [
         # Activites
@@ -318,29 +339,29 @@ module Ade
       @agent.submit options_form
     end
     
-    def get_day_agenda
+    def day_agenda
       get 'custom/modules/plannings/pianoDays.jsp?day=' + (Time.new.wday - 1).to_s + '&reset=true'
-      page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
-      parse_agenda page
+      @page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
+      parse_agenda
     end
     
-    def get_week_agenda
-      page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
-      parse_agenda page
+    def week_agenda
+      @page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
+      parse_agenda
     end
     
-    def get_full_agenda
+    def full_agenda
       get 'custom/modules/plannings/pianoWeeks.jsp?searchWeeks=all'
-      page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
-      parse_agenda page
+      @page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
+      parse_agenda
     end
     
     private
     
-    def parse_agenda(page)
+    def parse_agenda
       agenda = []
       i = 1
-      page.parser.css('tr').each do |tr|
+      @page.parser.css('tr').each do |tr|
         if tr.get_attribute('class').nil?
           tds = tr.css 'td'
           activity = Activity.new({
@@ -355,7 +376,7 @@ module Ade
           agenda << activity
         end
       end
-      return agenda
+      agenda
     end
     
   end

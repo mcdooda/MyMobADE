@@ -1,7 +1,7 @@
 module Ade
 	
 	class Config
-		attr_accessor :ade_path, :login, :password, :domain, :project, :resource_path
+		attr_accessor :ade_path, :login, :password, :domain, :project, :resource_path, :branch_id
 		
 		def initialize
 			@ade_path = nil
@@ -10,6 +10,7 @@ module Ade
 			@domain = nil
 			@project = nil
 			@resource_path = []
+			@branch_id = nil
 		end
 		
 		def to_s
