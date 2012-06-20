@@ -1,0 +1,5 @@
+<ul data-role="listview" data-inset="true">
+  <% @branches.each do |branch| %>
+    <li><%= link_to branch[:name], id: branch[:id], leaf: @leaf %></li>
+  <% end %>
+</ul>

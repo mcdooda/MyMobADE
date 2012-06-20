@@ -1,17 +1,15 @@
 class AgendaController < ApplicationController
-  before_filter :open_agenda
-  
+  before_filter :check_logged_in
+
   private
   
-  def open_agenda
-    @reader = Ade::Reader.new Ade::Schools::Classes::L3infog2.new
-    @reader.login
-    @reader.select_project
-    @reader.select_category
-    @reader.select_branch
-    @reader.select_table_view_options
+  def check_logged_in
+    unless logged_in?
+      ade_clear
+      redirect_to controller: :login, action: :login
+    end
   end
-  
+
   def sort_agenda_per_day
     @agenda_per_day = {}
     @agenda.each do |activity|
@@ -24,26 +22,27 @@ class AgendaController < ApplicationController
   public
   
   def day
-    @agenda = @reader.get_day_agenda
+    @title = "Aujourd'hui"
+    @agenda = ade_load.day_agenda
     sort_agenda_per_day
-    @agenda_title = 'L3 Info G2 S2'
     render 'all'
   end
 
   def week
-    @agenda = @reader.get_week_agenda
+    @title = "Cette semaine"
+    @agenda = ade_load.week_agenda
     sort_agenda_per_day
-    @agenda_title = 'L3 Info G2 S2'
     render 'all'
   end
 
   def month
+    @title = "Ce mois-ci"
   end
 
   def all
-    @agenda = @reader.get_full_agenda
+    @title = "La totale"
+    @agenda = ade_load.full_agenda
     sort_agenda_per_day
-    @agenda_title = 'L3 Info G2 S2'
   end
   
 end

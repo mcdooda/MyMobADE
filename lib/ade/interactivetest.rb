@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative 'interactivereader.rb'
+require_relative 'interactive_reader.rb'
 require_relative 'config.rb'
 require_relative 'activity.rb'
 require_relative 'schools/ujf.rb'

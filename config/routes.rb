@@ -1,13 +1,15 @@
 Mymobade::Application.routes.draw do
+  get "login/login"
+  get "login/project"
+  get "login/category"
+  get "login/branch"
+
   get "agenda/day"
-
   get "agenda/week"
-
   get "agenda/month"
-
   get "agenda/all"
   
-  root :to => "agenda#all"
+  root :to => "login#login"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
