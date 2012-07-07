@@ -1,22 +1,25 @@
 # coding: utf-8
 
 class LoginController < ApplicationController
-
+  before_filter :load_ade
+  after_filter :save_ade
+  
   def login
-    redirect_to controller: :agenda, action: :all if logged_in?
-    
-    @title = 'Connexion'
-    
-    unless params[:login].blank?
-      login = params[:login].strip
-      password = params[:password]
-      domain = params[:domain] unless params[:domain].blank?
+    if logged_in?
+      redirect_to controller: :agenda, action: :all
+    else
+      clear_cookies
+      @title = 'Connexion'
       
-      ade_reader = ade_load
-      ade_reader.login login, password, domain
-      ade_save ade_reader
-      
-      redirect_to action: :project
+      unless params[:login].blank?
+        login = params[:login].strip
+        password = params[:password]
+        domain = params[:domain] unless params[:domain].blank?
+        
+        @ade.login login, password, domain
+        
+        redirect_to action: :project
+      end
     end
   end
 
@@ -24,15 +27,11 @@ class LoginController < ApplicationController
     @title = 'Choisissez un projet'
     
     if params[:id]
-      ade_reader = ade_load
-      ade_reader.project_id = params[:id]
-      ade_save ade_reader
+      @ade.project_id = params[:id]
       
       redirect_to action: :category
     else
-      ade_reader = ade_load
-      @projects = ade_reader.projects
-      ade_save ade_reader
+      @projects = @ade.projects
     end
   end
 
@@ -40,33 +39,26 @@ class LoginController < ApplicationController
     @title = 'Choisissez une catégorie'
     
     if params[:id]
-      ade_reader = ade_load
-      ade_reader.category_id = params[:id]
-      ade_save ade_reader
+      @ade.category_id = params[:id]
       
       redirect_to action: :branch
     else
-      ade_reader = ade_load
-      @categories = ade_reader.categories
-      ade_save ade_reader
+      @categories = @ade.categories
     end
   end
 
   def branch
     @title = 'Choisissez une branche'
     
-    if not params[:leaf] == "true"
-      ade_reader = ade_load
-      ade_reader.branch_id = params[:id] if params[:id]
-      @branches = ade_reader.branches
-      @leaf = ade_reader.leaf?
-      ade_save ade_reader
+    if params[:leaf] != "true"
+      @ade.branch_id = params[:id] if params[:id]
+      @branches = @ade.branches
+      @leaf = @ade.leaf?
     else
-      ade_reader = ade_load
-      ade_reader.branch_id = params[:id]
-      ade_reader.setup_table_view_options
-      ade_save ade_reader
+      @ade.branch_id = params[:id]
+      @ade.setup_table_view_options
       
+      log_in
       redirect_to controller: :agenda, action: :all
     end
   end

@@ -1,11 +1,12 @@
 class AgendaController < ApplicationController
-  before_filter :check_logged_in
+  before_filter :check_logged_in, :load_ade
+  after_filter :save_ade
 
   private
   
   def check_logged_in
     unless logged_in?
-      ade_clear
+      clear_cookies
       redirect_to controller: :login, action: :login
     end
   end
@@ -23,25 +24,28 @@ class AgendaController < ApplicationController
   
   def day
     @title = "Aujourd'hui"
-    @agenda = ade_load.day_agenda
+    @agenda = @ade.day_agenda
     sort_agenda_per_day
     render 'all'
   end
 
   def week
-    @title = "Cette semaine"
-    @agenda = ade_load.week_agenda
+    @title = "(non fonctionnel) Cette semaine"
+    @agenda = @ade.week_agenda
     sort_agenda_per_day
     render 'all'
   end
 
   def month
-    @title = "Ce mois-ci"
+    @title = "(non fonctionnel) Ce mois-ci"
+    @agenda = @ade.month_agenda
+    sort_agenda_per_day
+    render 'all'
   end
 
   def all
     @title = "La totale"
-    @agenda = ade_load.full_agenda
+    @agenda = @ade.full_agenda
     sort_agenda_per_day
   end
   
