@@ -24,8 +24,13 @@ class ApplicationController < ActionController::Base
   end
   
   def clear_cookies
-    cookies.delete :ade
-    cookies.delete :logged_in
+    [
+      :ade,
+      :logged_in
+    ].each do |cookie|
+      cookies[cookie] = nil
+      cookies.delete cookie
+    end
   end
   
 end

@@ -7,18 +7,22 @@ require_relative 'schools/ujf.rb'
 
 r = Ade::InteractiveReader.new Ade::Schools::Ujf.new
 
-puts "login:"
-login = gets.strip
+while not r.logged_in?
+  puts "login:"
+  login = gets.strip
 
-puts "password:"
-password = gets.strip
+  puts "password:"
+  password = gets.strip
 
-puts "cas domain (opt.):"
-domain = gets.strip
-domain = nil if domain.empty?
+  puts "cas domain (opt.):"
+  domain = gets.strip
+  domain = nil if domain.empty?
 
-puts "* logging in..."
-r.login login, password, domain
+  puts "* logging in..."
+  r.login login, password, domain
+  
+  puts "!!! try again:" unless r.logged_in?
+end
 
 puts "* looking for projects..."
 projects = r.projects

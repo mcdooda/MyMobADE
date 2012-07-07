@@ -18,7 +18,11 @@ class LoginController < ApplicationController
         
         @ade.login login, password, domain
         
-        redirect_to action: :project
+        if @ade.logged_in?
+          redirect_to action: :project
+        else
+          flash.now[:error] = 'Mauvais login ou mot de passe'
+        end
       end
     end
   end

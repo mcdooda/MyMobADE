@@ -18,6 +18,7 @@ module Ade
       @category_id = nil
       @branch_id = nil
       @enabled_days = [true, true, true, true, true, true, true]
+      @logged_in = false
     end
     
     def marshal_dump
@@ -25,11 +26,11 @@ module Ade
       @agent.cookie_jar.dump_cookiestxt strio
       ade_cookies = strio.string
       strio.close
-      [@branch_level, @leaf, @category_id, @branch_id, @config, @enabled_days, ade_cookies]
+      [@branch_level, @leaf, @category_id, @branch_id, @config, @enabled_days, @logged_in, ade_cookies]
     end
     
     def marshal_load(array)
-      @branch_level, @leaf, @category_id, @branch_id, @config, @enabled_days, ade_cookies = array
+      @branch_level, @leaf, @category_id, @branch_id, @config, @enabled_days, @logged_in, ade_cookies = array
       @agent = Mechanize.new
       strio = StringIO.new
       strio << ade_cookies
@@ -67,6 +68,20 @@ module Ade
       end
       
       @agent.submit login_form
+      
+      location_regex = /top\.document\.location=\'(.+)\.jsp\'/
+      match = location_regex.match(@agent.page.content)
+      
+      case match[1]
+      when 'projects' # may be something else if there is only one project
+        @logged_in = true
+      else # probably index
+        
+      end
+    end
+    
+    def logged_in?
+      @logged_in
     end
     
     def projects
