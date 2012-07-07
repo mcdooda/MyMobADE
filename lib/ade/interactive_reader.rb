@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'mechanize'
-require 'tempfile'
+require 'stringio'
 
 module Ade
 
@@ -17,40 +17,29 @@ module Ade
       @leaf = false
       @category_id = nil
       @branch_id = nil
+      @enabled_days = [true, true, true, true, true, true, true]
     end
     
-    def branch_level=(branch_level)
-      @branch_level = branch_level
+    def marshal_dump
+      strio = StringIO.new
+      @agent.cookie_jar.dump_cookiestxt strio
+      ade_cookies = strio.string
+      strio.close
+      [@branch_level, @leaf, @category_id, @branch_id, @config, @enabled_days, ade_cookies]
     end
     
-    def branch_level
-      @branch_level
+    def marshal_load(array)
+      @branch_level, @leaf, @category_id, @branch_id, @config, @enabled_days, ade_cookies = array
+      @agent = Mechanize.new
+      strio = StringIO.new
+      strio << ade_cookies
+      strio.rewind
+      @agent.cookie_jar.load_cookiestxt strio
+      strio.close
     end
     
-    def category_id
-      @category_id
-    end
-    
-    # category_id= defined below
-    def set_category_id(category_id)
-      @category_id = category_id
-    end
-    
-    def branch_id
-      @branch_id
-    end
-    
-    # branch_id= defined below
-    def set_branch_id(branch_id)
-      @branch_id = branch_id
-    end
-    
-    def cookie_jar_dump(io)
-      @agent.cookie_jar.dump_cookiestxt io
-    end
-    
-    def cookie_jar_load(io)
-      @agent.cookie_jar.load_cookiestxt io
+    def leaf?
+      @leaf
     end
     
     private
@@ -140,15 +129,12 @@ module Ade
       item_regex = /check\((.+),/
       
       if @page.nil?
-        puts
-        puts
-        puts "NO PAGE! branch_level = #{@branch_level} category_id = #{@category_id} branch_id = #{@branch_id}"
         if @branch_level == 1
           # FFFUUUUUU
-          get('standard/gui/tree.jsp?category=' + category_id + '&expand=true&forceLoad=false&reload=false&scroll=0')
-          @page = get('standard/gui/tree.jsp?category=' + category_id + '&expand=true&forceLoad=false&reload=false&scroll=0')
+          get('standard/gui/tree.jsp?category=' + @category_id + '&expand=true&forceLoad=false&reload=false&scroll=0')
+          @page = get('standard/gui/tree.jsp?category=' + @category_id + '&expand=true&forceLoad=false&reload=false&scroll=0')
         else
-          @page = get('standard/gui/tree.jsp?branchId=' + branch_id + '&expand=false&forceLoad=false&reload=false&scroll=0')
+          @page = get('standard/gui/tree.jsp?branchId=' + @branch_id + '&expand=false&forceLoad=false&reload=false&scroll=0')
         end
       end
       
@@ -184,14 +170,6 @@ module Ade
       else
         @page = get('custom/modules/plannings/direct_planning.jsp?resources=' + branch_id)
       end
-    end
-    
-    def leaf?
-      @leaf
-    end
-    
-    def leaf=(leaf)
-      @leaf = leaf
     end
     
     def setup_table_view_options
@@ -412,23 +390,47 @@ module Ade
     end
     
     def day_agenda
-      get 'custom/modules/plannings/pianoDays.jsp?day=' + (Time.new.wday - 1).to_s + '&reset=true'
+      enable_day(Time.new.wday - 1, true)
       @page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
       parse_agenda
     end
     
-    def week_agenda
+    def week_agenda # not working
+      enable_all_days
+      @page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
+      parse_agenda
+    end
+    
+    def month_agenda # not working
+      enable_all_days
       @page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
       parse_agenda
     end
     
     def full_agenda
+      enable_all_days
       get 'custom/modules/plannings/pianoWeeks.jsp?searchWeeks=all'
       @page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
       parse_agenda
     end
     
     private
+    
+    def enable_day(day, reset)
+      @enabled_days.fill { |d| d == day }
+      get 'custom/modules/plannings/pianoDays.jsp?day=' + day.to_s + '&reset=' + reset.to_s
+    end
+    
+    def enable_all_days
+      day = 0
+      @enabled_days.each do |enabled|
+        unless enabled
+          get 'custom/modules/plannings/pianoDays.jsp?day=' + day.to_s + '&reset=false'
+          @enabled_days[day] = true
+        end
+        day += 1
+      end
+    end
     
     def parse_agenda
       agenda = []
