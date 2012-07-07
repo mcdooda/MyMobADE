@@ -2,9 +2,13 @@ Mymobade::Application.routes.draw do
   root to: "login#login"
   
   match "login" => "login#login"
-  get "login/project"
-  get "login/category"
-  get "login/branch"
+  match "login/project" => "login#project"
+  match "login/project/:project_id" => "login#project"
+  match "login/category" => "login#category"
+  match "login/category/:category_id" => "login#category"
+  match "login/branch" => "login#branch"
+  match "login/branch/:branch_id" => "login#branch"
+  match "login/branch/:branch_id/:leaf" => "login#branch"
 
   get "agenda/day"
   get "agenda/week"

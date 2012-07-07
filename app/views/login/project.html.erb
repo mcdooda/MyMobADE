@@ -1,5 +1,5 @@
 <ul data-role="listview" data-inset="true">
   <% @projects.each do |project| %>
-    <li><%= link_to project[:name], id: project[:id] %></li>
+    <li><%= link_to project[:name], project_id: project[:id] %></li>
   <% end %>
 </ul>

@@ -24601,3 +24601,1018 @@ Started GET "/" for 192.168.1.43 at 2012-07-07 17:36:05 +0200
 Processing by LoginController#login as HTML
   Rendered login/login.html.erb within layouts/application (1.7ms)
 Completed 200 OK in 18ms (Views: 17.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-07 18:04:09 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 60ms (Views: 41.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-07 18:04:09 +0200
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-07 18:04:09 +0200
+Served asset /logout.css - 200 OK (2ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-07 18:04:09 +0200
+Served asset /options.css - 200 OK (2ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-07 18:04:09 +0200
+Served asset /login.css - 200 OK (1ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-07 18:04:09 +0200
+Served asset /agenda.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-07 18:04:09 +0200
+Served asset /jquery.js - 200 OK (4ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-07 18:04:09 +0200
+Served asset /agenda.js - 200 OK (2ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-07 18:04:09 +0200
+Served asset /login.js - 200 OK (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-07 18:04:09 +0200
+Served asset /logout.js - 200 OK (1ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-07 18:04:09 +0200
+Served asset /options.js - 200 OK (1ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:04:12 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h1S9ZVGLujaxqYUZ6OECd91bTcUfp/zxyx7RTpMsirg=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>"submit-value"}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 792ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-07 18:04:13 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 83ms (Views: 14.0ms)
+
+
+Started GET "/login/project?id=125" for 127.0.0.1 at 2012-07-07 18:04:41 +0200
+
+ArgumentError (missing :controller):
+  config/routes.rb:5:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-07 18:04:46 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 7.0ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-07 18:04:46 +0200
+Served asset /login.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-07 18:04:46 +0200
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-07 18:04:46 +0200
+Served asset /logout.css - 200 OK (0ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-07 18:04:46 +0200
+Served asset /agenda.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-07 18:04:46 +0200
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-07 18:04:46 +0200
+Served asset /options.css - 200 OK (0ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-07 18:04:46 +0200
+Served asset /agenda.js - 200 OK (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-07 18:04:46 +0200
+Served asset /login.js - 200 OK (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-07 18:04:46 +0200
+Served asset /logout.js - 200 OK (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-07 18:04:46 +0200
+Served asset /options.js - 200 OK (0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:04:48 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JiisrTf05De38WDY/duNmsDtAKQQ3ksH8mkclaxkd2M=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>"submit-value"}
+Redirected to 
+Completed 500 Internal Server Error in 655ms
+
+ActionController::RoutingError (No route matches {:action=>"project", :controller=>"login"}):
+  app/controllers/login_controller.rb:21:in `login'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:05:08 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JiisrTf05De38WDY/duNmsDtAKQQ3ksH8mkclaxkd2M=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>"submit-value"}
+Redirected to 
+Completed 500 Internal Server Error in 680ms
+
+ActionController::RoutingError (No route matches {:action=>"project", :controller=>"login"}):
+  app/controllers/login_controller.rb:21:in `login'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-07 18:06:25 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 64ms (Views: 45.1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-07 18:06:25 +0200
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-07 18:06:25 +0200
+Served asset /login.css - 200 OK (2ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-07 18:06:25 +0200
+Served asset /agenda.css - 200 OK (1ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-07 18:06:25 +0200
+Served asset /logout.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-07 18:06:25 +0200
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-07 18:06:25 +0200
+Served asset /options.css - 200 OK (1ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-07 18:06:25 +0200
+Served asset /agenda.js - 200 OK (1ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-07 18:06:25 +0200
+Served asset /login.js - 200 OK (1ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-07 18:06:25 +0200
+Served asset /logout.js - 200 OK (3ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-07 18:06:25 +0200
+Served asset /options.js - 200 OK (0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:06:27 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D5MLsEpXJK7uFMy8sexS004kU1mplGs1xNqSjXMyp3U=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>"submit-value"}
+Redirected to 
+Completed 500 Internal Server Error in 566ms
+
+ActionController::RoutingError (No route matches {:action=>"project", :controller=>"login"}):
+  app/controllers/login_controller.rb:21:in `login'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-07 18:07:31 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 13ms (Views: 12.7ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-07 18:07:31 +0200
+Served asset /agenda.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-07 18:07:31 +0200
+Served asset /login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-07 18:07:31 +0200
+Served asset /logout.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-07 18:07:31 +0200
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-07 18:07:31 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-07 18:07:31 +0200
+Served asset /options.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-07 18:07:31 +0200
+Served asset /agenda.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-07 18:07:31 +0200
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-07 18:07:31 +0200
+Served asset /logout.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-07 18:07:31 +0200
+Served asset /options.js - 304 Not Modified (0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:07:33 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D5MLsEpXJK7uFMy8sexS004kU1mplGs1xNqSjXMyp3U=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to 
+Completed 500 Internal Server Error in 551ms
+
+ActionController::RoutingError (No route matches {:action=>"project", :controller=>"login"}):
+  app/controllers/login_controller.rb:21:in `login'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:07:58 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D5MLsEpXJK7uFMy8sexS004kU1mplGs1xNqSjXMyp3U=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+WARNING: Can't verify CSRF token authenticity
+Redirected to 
+Completed 500 Internal Server Error in 552ms
+
+ActionController::RoutingError (No route matches {:action=>"project", :controller=>"login"}):
+  app/controllers/login_controller.rb:21:in `login'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-07 18:08:42 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 41ms (Views: 40.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-07 18:08:42 +0200
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-07 18:08:42 +0200
+Served asset /options.css - 200 OK (1ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-07 18:08:42 +0200
+Served asset /login.css - 200 OK (0ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-07 18:08:42 +0200
+Served asset /agenda.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-07 18:08:42 +0200
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-07 18:08:42 +0200
+Served asset /logout.css - 200 OK (1ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-07 18:08:42 +0200
+Served asset /agenda.js - 200 OK (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-07 18:08:42 +0200
+Served asset /login.js - 200 OK (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-07 18:08:42 +0200
+Served asset /logout.js - 200 OK (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-07 18:08:42 +0200
+Served asset /options.js - 200 OK (1ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:08:44 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T1oDfAiOudVL4mYH4gNXAnSskJzxOEtE+qASod66tAA=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to 
+Completed 500 Internal Server Error in 551ms
+
+ActionController::RoutingError (No route matches {:action=>"project", :controller=>"login"}):
+  app/controllers/login_controller.rb:21:in `login'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:10:39 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T1oDfAiOudVL4mYH4gNXAnSskJzxOEtE+qASod66tAA=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Completed 500 Internal Server Error in 0ms
+
+ArgumentError (undefined class/module Ade::):
+  app/controllers/application_controller.rb:20:in `load'
+  app/controllers/application_controller.rb:20:in `load_ade'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.1ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:10:44 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T1oDfAiOudVL4mYH4gNXAnSskJzxOEtE+qASod66tAA=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+WARNING: Can't verify CSRF token authenticity
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 688ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-07 18:10:45 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 271ms (Views: 20.2ms)
+
+
+Started GET "/login/project/125" for 127.0.0.1 at 2012-07-07 18:10:48 +0200
+Processing by LoginController#project as HTML
+  Parameters: {"id"=>"125"}
+Redirected to http://localhost:3000/login/category/125
+Completed 302 Found in 635ms
+
+
+Started GET "/login/category/125" for 127.0.0.1 at 2012-07-07 18:10:49 +0200
+Processing by LoginController#category as HTML
+  Parameters: {"id"=>"125"}
+Redirected to http://localhost:3000/login/branch/125
+Completed 302 Found in 725ms
+
+
+Started GET "/login/branch/125" for 127.0.0.1 at 2012-07-07 18:10:49 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"id"=>"125"}
+  Rendered login/branch.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 622ms (Views: 18.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-07 18:14:11 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 60ms (Views: 41.7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-07 18:14:11 +0200
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-07 18:14:11 +0200
+Served asset /agenda.css - 200 OK (0ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-07 18:14:11 +0200
+Served asset /login.css - 200 OK (1ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-07 18:14:11 +0200
+Served asset /logout.css - 200 OK (1ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-07 18:14:11 +0200
+Served asset /agenda.js - 200 OK (2ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-07 18:14:11 +0200
+Served asset /options.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-07 18:14:11 +0200
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-07 18:14:11 +0200
+Served asset /login.js - 200 OK (2ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-07 18:14:11 +0200
+Served asset /logout.js - 200 OK (1ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-07 18:14:11 +0200
+Served asset /options.js - 200 OK (2ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:14:13 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FgAqTEGakQEPJPuCAdTyujdhHzDNCrg+CVaqhYGvH9o=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 554ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-07 18:14:14 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 80ms (Views: 10.2ms)
+
+
+Started GET "/login/project?id=125" for 127.0.0.1 at 2012-07-07 18:14:20 +0200
+Processing by LoginController#project as HTML
+  Parameters: {"id"=>"125"}
+  Rendered login/project.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 144ms (Views: 19.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-07 18:15:34 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 61ms (Views: 42.0ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-07 18:15:34 +0200
+Served asset /agenda.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-07 18:15:34 +0200
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-07 18:15:34 +0200
+Served asset /logout.css - 200 OK (1ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-07 18:15:34 +0200
+Served asset /login.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-07 18:15:34 +0200
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-07 18:15:34 +0200
+Served asset /options.css - 200 OK (1ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-07 18:15:34 +0200
+Served asset /agenda.js - 200 OK (1ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-07 18:15:34 +0200
+Served asset /logout.js - 200 OK (1ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-07 18:15:34 +0200
+Served asset /login.js - 200 OK (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-07 18:15:34 +0200
+Served asset /options.js - 200 OK (0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:15:36 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cGYVcOgFdu0bX7heYG4gQiVdSsD0po8alCiXGwzZ4YE=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 553ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-07 18:15:37 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 82ms (Views: 13.2ms)
+
+
+Started GET "/login/project/125" for 127.0.0.1 at 2012-07-07 18:15:38 +0200
+Processing by LoginController#project as HTML
+  Parameters: {"project_id"=>"125"}
+Redirected to http://localhost:3000/login/category
+Completed 302 Found in 179ms
+
+
+Started GET "/login/category" for 127.0.0.1 at 2012-07-07 18:15:38 +0200
+Processing by LoginController#category as HTML
+  Rendered login/category.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 154ms (Views: 15.3ms)
+
+
+Started GET "/login/category/trainee" for 127.0.0.1 at 2012-07-07 18:15:50 +0200
+Processing by LoginController#category as HTML
+  Parameters: {"category_id"=>"trainee"}
+Redirected to http://localhost:3000/login/branch
+Completed 302 Found in 312ms
+
+
+Started GET "/login/branch" for 127.0.0.1 at 2012-07-07 18:15:50 +0200
+Processing by LoginController#branch as HTML
+  Rendered login/branch.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 380ms (Views: 13.3ms)
+
+
+Started GET "/login/branch/106?leaf=false" for 127.0.0.1 at 2012-07-07 18:15:53 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"leaf"=>"false", "branch_id"=>"106"}
+  Rendered login/branch.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 241ms (Views: 26.6ms)
+
+
+Started GET "/login/branch/535?leaf=false" for 127.0.0.1 at 2012-07-07 18:16:01 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"leaf"=>"false", "branch_id"=>"535"}
+  Rendered login/branch.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 293ms (Views: 10.1ms)
+
+
+Started GET "/login/branch/537?leaf=true" for 127.0.0.1 at 2012-07-07 18:16:03 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"leaf"=>"true", "branch_id"=>"537"}
+Redirected to http://localhost:3000/agenda/all
+Completed 302 Found in 694ms
+
+
+Started GET "/agenda/all" for 127.0.0.1 at 2012-07-07 18:16:03 +0200
+Processing by AgendaController#all as HTML
+  Rendered agenda/all.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 1091ms (Views: 55.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-07 18:18:00 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 62ms (Views: 42.6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-07 18:18:01 +0200
+Served asset /jquery_ujs.js - 200 OK (5ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-07 18:18:01 +0200
+Served asset /login.css - 200 OK (1ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-07 18:18:01 +0200
+Served asset /logout.css - 200 OK (2ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-07 18:18:01 +0200
+Served asset /agenda.css - 200 OK (1ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-07 18:18:01 +0200
+Served asset /options.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-07 18:18:01 +0200
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-07 18:18:01 +0200
+Served asset /agenda.js - 200 OK (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-07 18:18:01 +0200
+Served asset /login.js - 200 OK (1ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-07 18:18:01 +0200
+Served asset /logout.js - 200 OK (1ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-07 18:18:01 +0200
+Served asset /options.js - 200 OK (0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:18:03 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Judr6m9nzTiYbm2pDptNlFL+wkrCXxXbjxrTXSpIUL8=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 562ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-07 18:18:03 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 83ms (Views: 14.9ms)
+
+
+Started GET "/login/project/125" for 127.0.0.1 at 2012-07-07 18:18:08 +0200
+Processing by LoginController#project as HTML
+  Parameters: {"project_id"=>"125"}
+Redirected to http://localhost:3000/login/category
+Completed 302 Found in 174ms
+
+
+Started GET "/login/category" for 127.0.0.1 at 2012-07-07 18:18:08 +0200
+Processing by LoginController#category as HTML
+  Rendered login/category.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 152ms (Views: 17.1ms)
+
+
+Started GET "/login/category/trainee" for 127.0.0.1 at 2012-07-07 18:18:11 +0200
+Processing by LoginController#category as HTML
+  Parameters: {"category_id"=>"trainee"}
+Redirected to http://localhost:3000/login/branch
+Completed 302 Found in 189ms
+
+
+Started GET "/login/branch" for 127.0.0.1 at 2012-07-07 18:18:11 +0200
+Processing by LoginController#branch as HTML
+  Rendered login/branch.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 383ms (Views: 13.2ms)
+
+
+Started GET "/login/branch/106?leaf=false" for 127.0.0.1 at 2012-07-07 18:18:16 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"leaf"=>"false", "branch_id"=>"106"}
+  Rendered login/branch.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 226ms (Views: 28.7ms)
+
+
+Started GET "/login/branch/535?leaf=false" for 127.0.0.1 at 2012-07-07 18:18:27 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"leaf"=>"false", "branch_id"=>"535"}
+  Rendered login/branch.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 277ms (Views: 11.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-07 18:19:12 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 61ms (Views: 42.2ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-07 18:19:12 +0200
+Served asset /agenda.css - 200 OK (1ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-07 18:19:12 +0200
+Served asset /login.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-07 18:19:12 +0200
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-07 18:19:12 +0200
+Served asset /logout.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-07 18:19:12 +0200
+Served asset /jquery.js - 200 OK (7ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-07 18:19:12 +0200
+Served asset /options.css - 200 OK (2ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-07 18:19:12 +0200
+Served asset /agenda.js - 200 OK (2ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-07 18:19:12 +0200
+Served asset /login.js - 200 OK (1ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-07 18:19:12 +0200
+Served asset /logout.js - 200 OK (2ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-07 18:19:12 +0200
+Served asset /options.js - 200 OK (2ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:19:14 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nEOnO4iX2Iod4JmqbVCif2kjxwL9Pn3J6otqUsafqpM=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 609ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-07 18:19:15 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 83ms (Views: 13.6ms)
+
+
+Started GET "/login/project/125" for 127.0.0.1 at 2012-07-07 18:19:16 +0200
+Processing by LoginController#project as HTML
+  Parameters: {"project_id"=>"125"}
+Redirected to http://localhost:3000/login/category
+Completed 302 Found in 174ms
+
+
+Started GET "/login/category" for 127.0.0.1 at 2012-07-07 18:19:17 +0200
+Processing by LoginController#category as HTML
+  Rendered login/category.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 157ms (Views: 17.0ms)
+
+
+Started GET "/login/category/trainee" for 127.0.0.1 at 2012-07-07 18:19:19 +0200
+Processing by LoginController#category as HTML
+  Parameters: {"category_id"=>"trainee"}
+Redirected to http://localhost:3000/login/branch
+Completed 302 Found in 487ms
+
+
+Started GET "/login/branch" for 127.0.0.1 at 2012-07-07 18:19:20 +0200
+Processing by LoginController#branch as HTML
+  Rendered login/branch.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 1053ms (Views: 14.3ms)
+
+
+Started GET "/login/branch/106/false" for 127.0.0.1 at 2012-07-07 18:19:24 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"106", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 226ms (Views: 27.1ms)
+
+
+Started GET "/login/branch/535/false" for 127.0.0.1 at 2012-07-07 18:19:33 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"535", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1598ms (Views: 9.5ms)
+
+
+Started GET "/login/branch/537/true" for 127.0.0.1 at 2012-07-07 18:19:36 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"537", "leaf"=>"true"}
+Redirected to http://localhost:3000/agenda/all
+Completed 302 Found in 1029ms
+
+
+Started GET "/agenda/all" for 127.0.0.1 at 2012-07-07 18:19:37 +0200
+Processing by AgendaController#all as HTML
+  Rendered agenda/all.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 1257ms (Views: 52.1ms)
+
+
+Started GET "/login/branch/535/false" for 127.0.0.1 at 2012-07-07 18:20:04 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"535", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 205ms (Views: 7.4ms)
+
+
+Started GET "/login/branch/537/true" for 127.0.0.1 at 2012-07-07 18:20:05 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"537", "leaf"=>"true"}
+Redirected to http://localhost:3000/agenda/all
+Completed 302 Found in 721ms
+
+
+Started GET "/agenda/all" for 127.0.0.1 at 2012-07-07 18:20:06 +0200
+Processing by AgendaController#all as HTML
+  Rendered agenda/all.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 1522ms (Views: 52.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-07 18:20:20 +0200
+Processing by LoginController#login as HTML
+Redirected to http://localhost:3000/agenda/all
+Completed 302 Found in 1ms
+
+
+Started GET "/agenda/all" for 127.0.0.1 at 2012-07-07 18:20:20 +0200
+Processing by AgendaController#all as HTML
+  Rendered agenda/all.html.erb within layouts/application (49.6ms)
+Completed 200 OK in 1098ms (Views: 57.2ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-07 18:20:21 +0200
+Served asset /login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-07 18:20:21 +0200
+Served asset /agenda.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-07 18:20:21 +0200
+Served asset /logout.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-07 18:20:21 +0200
+Served asset /options.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-07 18:20:21 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-07 18:20:21 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-07 18:20:21 +0200
+Served asset /agenda.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-07 18:20:21 +0200
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-07 18:20:21 +0200
+Served asset /logout.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-07 18:20:21 +0200
+Served asset /options.js - 304 Not Modified (0ms)
+
+
+Started GET "/options" for 127.0.0.1 at 2012-07-07 18:20:24 +0200
+Processing by OptionsController#options as HTML
+  Rendered options/options.html.erb (7.5ms)
+Completed 200 OK in 12ms (Views: 11.1ms)
+
+
+Started GET "/agenda/month" for 127.0.0.1 at 2012-07-07 18:20:27 +0200
+Processing by AgendaController#month as HTML
+  Rendered agenda/all.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 819ms (Views: 51.3ms)
+
+
+Started GET "/options" for 127.0.0.1 at 2012-07-07 18:20:30 +0200
+Processing by OptionsController#options as HTML
+  Rendered options/options.html.erb (13.8ms)
+Completed 200 OK in 17ms (Views: 16.9ms)
+
+
+Started GET "/agenda/day" for 127.0.0.1 at 2012-07-07 18:20:33 +0200
+Processing by AgendaController#day as HTML
+  Rendered agenda/all.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 463ms (Views: 36.6ms)
+
+
+Started GET "/options" for 127.0.0.1 at 2012-07-07 18:20:37 +0200
+Processing by OptionsController#options as HTML
+  Rendered options/options.html.erb (10.1ms)
+Completed 200 OK in 13ms (Views: 13.2ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-07 18:20:38 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/all.html.erb within layouts/application (44.8ms)
+Completed 200 OK in 1998ms (Views: 52.6ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2012-07-07 18:20:44 +0200
+Processing by LogoutController#logout as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-07 18:20:44 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 9ms (Views: 8.4ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:20:46 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nEOnO4iX2Iod4JmqbVCif2kjxwL9Pn3J6otqUsafqpM=", "login"=>"", "password"=>"[FILTERED]", "submit"=>""}
+  Rendered login/login.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 7.4ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:20:47 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nEOnO4iX2Iod4JmqbVCif2kjxwL9Pn3J6otqUsafqpM=", "login"=>"", "password"=>"[FILTERED]", "submit"=>""}
+  Rendered login/login.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 7.6ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:20:48 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nEOnO4iX2Iod4JmqbVCif2kjxwL9Pn3J6otqUsafqpM=", "login"=>"", "password"=>"[FILTERED]", "submit"=>""}
+  Rendered login/login.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 15.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:20:48 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nEOnO4iX2Iod4JmqbVCif2kjxwL9Pn3J6otqUsafqpM=", "login"=>"", "password"=>"[FILTERED]", "submit"=>""}
+  Rendered login/login.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 15.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:20:52 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nEOnO4iX2Iod4JmqbVCif2kjxwL9Pn3J6otqUsafqpM=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 2125ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-07 18:20:54 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 327ms (Views: 12.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-07 18:20:58 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 22.1ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-07 18:20:58 +0200
+Served asset /agenda.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-07 18:20:58 +0200
+Served asset /login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-07 18:20:58 +0200
+Served asset /options.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-07 18:20:58 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-07 18:20:58 +0200
+Served asset /logout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-07 18:20:58 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-07 18:20:58 +0200
+Served asset /agenda.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-07 18:20:58 +0200
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-07 18:20:58 +0200
+Served asset /logout.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-07 18:20:58 +0200
+Served asset /options.js - 304 Not Modified (0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:21:02 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nEOnO4iX2Iod4JmqbVCif2kjxwL9Pn3J6otqUsafqpM=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 1630ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-07 18:21:03 +0200
+Processing by LoginController#project as HTML
+Completed 500 Internal Server Error in 337ms
+
+Mechanize::ResponseCodeError (500 => Net::HTTPInternalServerError for http://ade52-ujf.grenet.fr/ade/standard/projects.jsp -- unhandled response):
+  lib/ade/interactive_reader.rb:51:in `get'
+  lib/ade/interactive_reader.rb:73:in `projects'
+  app/controllers/login_controller.rb:33:in `project'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.8ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-07 18:21:15 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nEOnO4iX2Iod4JmqbVCif2kjxwL9Pn3J6otqUsafqpM=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 610ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-07 18:21:16 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 84ms (Views: 14.6ms)

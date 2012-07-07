@@ -1,5 +1,5 @@
 <ul data-role="listview" data-inset="true">
   <% @branches.each do |branch| %>
-    <li><%= link_to branch[:name], id: branch[:id], leaf: @leaf %></li>
+    <li><%= link_to branch[:name], branch_id: branch[:id], leaf: @leaf.to_s %></li>
   <% end %>
 </ul>

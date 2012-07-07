@@ -26,9 +26,8 @@ class LoginController < ApplicationController
   def project
     @title = 'Choisissez un projet'
     
-    if params[:id]
-      @ade.project_id = params[:id]
-      
+    if params[:project_id]
+      @ade.project_id = params[:project_id]
       redirect_to action: :category
     else
       @projects = @ade.projects
@@ -38,9 +37,8 @@ class LoginController < ApplicationController
   def category
     @title = 'Choisissez une catégorie'
     
-    if params[:id]
-      @ade.category_id = params[:id]
-      
+    if params[:category_id]
+      @ade.category_id = params[:category_id]
       redirect_to action: :branch
     else
       @categories = @ade.categories
@@ -51,11 +49,11 @@ class LoginController < ApplicationController
     @title = 'Choisissez une branche'
     
     if params[:leaf] != "true"
-      @ade.branch_id = params[:id] if params[:id]
+      @ade.branch_id = params[:branch_id] if params[:branch_id]
       @branches = @ade.branches
       @leaf = @ade.leaf?
     else
-      @ade.branch_id = params[:id]
+      @ade.branch_id = params[:branch_id]
       @ade.setup_table_view_options
       
       log_in
