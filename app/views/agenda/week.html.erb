@@ -1,2 +1,23 @@
-<h1>Agenda#week</h1>
-<p>Find me in app/views/agenda/week.html.erb</p>
+<%= render 'agenda' %>
+
+<% content_for :footer do %>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li>
+          <% if @previous_week %>
+            <a href="<%= url_for controller: :agenda, action: :week, week_id: @previous_week %>" data-icon="arrow-l">Pr&eacute;c&eacute;dent</a>
+          <% end %>
+        </li>
+        <li>
+          <a href="<%= url_for controller: :agenda, action: :week, week_id: @current_week %>" data-icon="home">Cette semaine</a>
+        </li>
+        <li>
+          <% if @next_week %>
+            <a href="<%= url_for controller: :agenda, action: :week, week_id: @next_week %>" data-icon="arrow-r">Suivant</a>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+<% end %>

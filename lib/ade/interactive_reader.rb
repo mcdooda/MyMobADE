@@ -17,8 +17,11 @@ module Ade
       @leaf = false
       @category_id = nil
       @branch_id = nil
-      @enabled_days = [true, true, true, true, true, true, true]
       @logged_in = false
+      @current_week = nil
+      @selected_week = nil
+      @last_week = nil
+      @selected_day = nil
     end
     
     def marshal_dump
@@ -26,11 +29,11 @@ module Ade
       @agent.cookie_jar.dump_cookiestxt strio
       ade_cookies = strio.string
       strio.close
-      [@branch_level, @leaf, @category_id, @branch_id, @config, @enabled_days, @logged_in, ade_cookies]
+      [@branch_level, @leaf, @category_id, @branch_id, @config, @logged_in, @current_week, @selected_week, @last_week, @selected_day, ade_cookies]
     end
     
     def marshal_load(array)
-      @branch_level, @leaf, @category_id, @branch_id, @config, @enabled_days, @logged_in, ade_cookies = array
+      @branch_level, @leaf, @category_id, @branch_id, @config, @logged_in, @current_week, @selected_week, @last_week, @selected_day, ade_cookies = array
       @agent = Mechanize.new
       strio = StringIO.new
       strio << ade_cookies
@@ -43,16 +46,25 @@ module Ade
       @leaf
     end
     
-    private
-    
-    def get(page)
-      puts
-      puts
-      puts "***** LOADING: #{@config.ade_path + page}"
-      @agent.get(@config.ade_path + page)
+    def current_week
+      @current_week
     end
     
-    public
+    def selected_week
+      @selected_week
+    end
+    
+    def last_week
+      @last_week
+    end
+    
+    def current_day
+      (Time.new.wday - 1 + 7) % 7
+    end
+    
+    def selected_day
+      @selected_day
+    end
     
     def login(login, password, domain)
       @page = get 'standard/index.jsp?lang=FR'
@@ -404,47 +416,81 @@ module Ade
       @agent.submit options_form
     end
     
+    def find_current_week
+      @current_week = get_selected_week
+      @selected_week = @current_week
+      @last_week = @page.parser.css('.piano').length # = number of .piano + .pianoselect
+    end
+    
     def day_agenda
-      enable_day(Time.new.wday - 1, true)
+      if @selected_day == nil
+        self.selected_day = self.current_day
+      end
+      if @selected_week == nil
+        self.selected_week = @current_week
+      end
       @page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
       parse_agenda
     end
     
-    def week_agenda # not working
-      enable_all_days
-      @page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
-      parse_agenda
-    end
-    
-    def month_agenda # not working
-      enable_all_days
+    def week_agenda
+      select_all_days
+      if @selected_week == nil
+        self.selected_week = @current_week
+      end
       @page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
       parse_agenda
     end
     
     def full_agenda
-      enable_all_days
-      get 'custom/modules/plannings/pianoWeeks.jsp?searchWeeks=all'
+      select_all_days
+      select_all_weeks
       @page = get 'custom/modules/plannings/info.jsp?order=slot&light=true'
       parse_agenda
     end
     
-    private
-    
-    def enable_day(day, reset)
-      @enabled_days.fill { |d| d == day }
-      get 'custom/modules/plannings/pianoDays.jsp?day=' + day.to_s + '&reset=' + reset.to_s
+        
+    def selected_week=(week)
+      if @selected_week != week
+        @selected_week = week
+        get 'custom/modules/plannings/bounds.jsp?week=' + week.to_s + '&reset=true'
+      end
     end
     
-    def enable_all_days
-      day = 0
-      @enabled_days.each do |enabled|
-        unless enabled
-          get 'custom/modules/plannings/pianoDays.jsp?day=' + day.to_s + '&reset=false'
-          @enabled_days[day] = true
-        end
-        day += 1
+    def select_all_weeks
+      if @selected_week != nil
+        get 'custom/modules/plannings/pianoWeeks.jsp?searchWeeks=all'
+        @selected_week = nil
       end
+    end
+    
+    def selected_day=(day)
+      if @selected_day != day
+        get 'custom/modules/plannings/pianoDays.jsp?day=' + day.to_s + '&reset=true'
+        @selected_day = day
+      end
+    end
+    
+    def select_all_days
+      if @selected_day != nil
+        (0..6).each do |day|
+          get 'custom/modules/plannings/pianoDays.jsp?day=' + day.to_s + '&reset=false' if day != @selected_day
+        end
+        @selected_day = nil
+      end
+    end
+    
+    private
+    
+    def get_selected_week
+      @page = get 'custom/modules/plannings/pianoWeeks.jsp'
+      
+      puts @page.content
+      
+      week_regex = /.+\((.+),/
+      match = week_regex.match(@page.parser.css('.pianoselected area').first.get_attribute('href'))
+      
+      match[1].to_i
     end
     
     def parse_agenda
@@ -466,6 +512,13 @@ module Ade
         end
       end
       agenda
+    end
+    
+    def get(page)
+      puts
+      puts
+      puts "***** LOADING: #{@config.ade_path + page}"
+      @agent.get(@config.ade_path + page)
     end
     
   end
