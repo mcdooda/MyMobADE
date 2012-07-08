@@ -60,7 +60,6 @@ class AgendaController < ApplicationController
     @next_week = nil if @next_week > @ade.last_week
     
     day = Date.commercial(Date.today.year, @ade.selected_week - (@ade.current_week - Date.today.cweek), @ade.selected_day % 7 + 1)
-    day += 7.days if Date.today.wday == 0
     
     @title = "#{get_day @ade.selected_day} #{day.day} #{get_month day.month} #{day.year}"
     
