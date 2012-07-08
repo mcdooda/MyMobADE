@@ -741,3 +741,1691 @@ Processing by AgendaController#day as HTML
   Rendered agenda/_agenda.html.erb (0.3ms)
   Rendered agenda/day.html.erb within layouts/application (9.4ms)
 Completed 200 OK in 759ms (Views: 45.5ms)
+
+
+Started GET "/agenda/day" for 127.0.0.1 at 2012-07-08 23:57:22 +0200
+Processing by AgendaController#day as HTML
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (undefined class/module Ade::):
+  app/controllers/application_controller.rb:18:in `load'
+  app/controllers/application_controller.rb:18:in `load_ade'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (74.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-08 23:57:27 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 163ms (Views: 134.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-08 23:57:27 +0200
+Served asset /jquery_ujs.js - 200 OK (12ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-08 23:57:27 +0200
+Served asset /agenda.css - 200 OK (3ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-08 23:57:27 +0200
+Served asset /login.css - 200 OK (4ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-08 23:57:27 +0200
+Served asset /options.css - 200 OK (4ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-08 23:57:27 +0200
+Served asset /logout.css - 200 OK (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-08 23:57:27 +0200
+Served asset /jquery.js - 200 OK (8ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-08 23:57:27 +0200
+Served asset /agenda.js - 200 OK (3ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-08 23:57:27 +0200
+Served asset /login.js - 200 OK (51ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-08 23:57:27 +0200
+Served asset /logout.js - 200 OK (3ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-08 23:57:27 +0200
+Served asset /options.js - 200 OK (3ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-08 23:57:29 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Omo8RL/VJUqJ4FYO2oEtIoTXJZeIg2guaoyE743Pk6k=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 670ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-08 23:57:30 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 112ms (Views: 34.9ms)
+
+
+Started GET "/login/project/125" for 127.0.0.1 at 2012-07-08 23:57:32 +0200
+Processing by LoginController#project as HTML
+  Parameters: {"project_id"=>"125"}
+Redirected to http://localhost:3000/login/category
+Completed 302 Found in 265ms
+
+
+Started GET "/login/category" for 127.0.0.1 at 2012-07-08 23:57:32 +0200
+Processing by LoginController#category as HTML
+  Rendered login/category.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 211ms (Views: 41.7ms)
+
+
+Started GET "/login/category/trainee" for 127.0.0.1 at 2012-07-08 23:57:34 +0200
+Processing by LoginController#category as HTML
+  Parameters: {"category_id"=>"trainee"}
+Redirected to http://localhost:3000/login/branch
+Completed 302 Found in 206ms
+
+
+Started GET "/login/branch" for 127.0.0.1 at 2012-07-08 23:57:35 +0200
+Processing by LoginController#branch as HTML
+  Rendered login/branch.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 507ms (Views: 51.3ms)
+
+
+Started GET "/login/branch/106/false" for 127.0.0.1 at 2012-07-08 23:57:38 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"106", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 248ms (Views: 30.8ms)
+
+
+Started GET "/login/branch/535/false" for 127.0.0.1 at 2012-07-08 23:57:40 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"535", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 253ms (Views: 29.1ms)
+
+
+Started GET "/login/branch/537/true" for 127.0.0.1 at 2012-07-08 23:57:42 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"537", "leaf"=>"true"}
+Redirected to http://localhost:3000/agenda/week
+Completed 302 Found in 1148ms
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-08 23:57:43 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/_agenda.html.erb (2.3ms)
+  Rendered agenda/week.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 287ms (Views: 109.3ms)
+
+
+Started GET "/options" for 127.0.0.1 at 2012-07-08 23:57:46 +0200
+Processing by OptionsController#options as HTML
+  Rendered options/options.html.erb (27.1ms)
+Completed 200 OK in 34ms (Views: 33.1ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-08 23:57:50 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/_agenda.html.erb (0.4ms)
+  Rendered agenda/week.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 279ms (Views: 37.0ms)
+
+
+Started GET "/agenda/week/45" for 127.0.0.1 at 2012-07-08 23:57:57 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"45"}
+  Rendered agenda/_agenda.html.erb (0.4ms)
+  Rendered agenda/week.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 451ms (Views: 37.7ms)
+
+
+Started GET "/agenda/week/10" for 127.0.0.1 at 2012-07-08 23:58:00 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"10"}
+  Rendered agenda/_agenda.html.erb (53.5ms)
+  Rendered agenda/week.html.erb within layouts/application (61.7ms)
+Completed 200 OK in 435ms (Views: 90.8ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-08 23:58:01 +0200
+Served asset /agenda.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-08 23:58:01 +0200
+Served asset /login.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-08 23:58:01 +0200
+Served asset /jquery.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-08 23:58:01 +0200
+Served asset /agenda.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-08 23:58:01 +0200
+Served asset /logout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-08 23:58:01 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-08 23:58:01 +0200
+Served asset /options.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-08 23:58:01 +0200
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-08 23:58:01 +0200
+Served asset /options.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-08 23:58:01 +0200
+Served asset /logout.js - 304 Not Modified (0ms)
+
+
+Started GET "/agenda/week/11" for 127.0.0.1 at 2012-07-08 23:58:08 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"11"}
+  Rendered agenda/_agenda.html.erb (0.3ms)
+  Rendered agenda/week.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 404ms (Views: 40.0ms)
+
+
+Started GET "/agenda/week/12" for 127.0.0.1 at 2012-07-08 23:58:10 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"12"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 373ms (Views: 42.4ms)
+
+
+Started GET "/agenda/week/13" for 127.0.0.1 at 2012-07-08 23:58:11 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"13"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 464ms (Views: 33.9ms)
+
+
+Started GET "/agenda/week/14" for 127.0.0.1 at 2012-07-08 23:58:13 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"14"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 364ms (Views: 37.4ms)
+
+
+Started GET "/agenda/week/15" for 127.0.0.1 at 2012-07-08 23:58:14 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"15"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 455ms (Views: 39.0ms)
+
+
+Started GET "/agenda/week/16" for 127.0.0.1 at 2012-07-08 23:58:16 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"16"}
+  Rendered agenda/_agenda.html.erb (1.4ms)
+  Rendered agenda/week.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 593ms (Views: 89.4ms)
+
+
+Started GET "/agenda/week/17" for 127.0.0.1 at 2012-07-08 23:58:19 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"17"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 363ms (Views: 38.3ms)
+
+
+Started GET "/agenda/week/18" for 127.0.0.1 at 2012-07-08 23:58:21 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"18"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 450ms (Views: 40.3ms)
+
+
+Started GET "/agenda/week/19" for 127.0.0.1 at 2012-07-08 23:58:22 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"19"}
+Completed 500 Internal Server Error in 414ms
+
+ArgumentError (invalid date):
+  app/controllers/agenda_controller.rb:81:in `commercial'
+  app/controllers/agenda_controller.rb:81:in `week'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.0ms)
+
+
+Started GET "/agenda/week/19" for 127.0.0.1 at 2012-07-08 23:58:30 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"19"}
+Completed 500 Internal Server Error in 654ms
+
+ArgumentError (invalid date):
+  app/controllers/agenda_controller.rb:81:in `commercial'
+  app/controllers/agenda_controller.rb:81:in `week'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.3ms)
+
+
+Started GET "/agenda/week/19" for 127.0.0.1 at 2012-07-08 23:58:33 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"19"}
+Completed 500 Internal Server Error in 398ms
+
+ArgumentError (invalid date):
+  app/controllers/agenda_controller.rb:81:in `commercial'
+  app/controllers/agenda_controller.rb:81:in `week'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.7ms)
+
+
+Started GET "/agenda/week/20" for 127.0.0.1 at 2012-07-08 23:58:41 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"20"}
+  Rendered agenda/_agenda.html.erb (2.4ms)
+  Rendered agenda/week.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 1180ms (Views: 35.8ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-08 23:58:42 +0200
+Served asset /logout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-08 23:58:42 +0200
+Served asset /agenda.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-08 23:58:42 +0200
+Served asset /login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-08 23:58:42 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-08 23:58:42 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-08 23:58:42 +0200
+Served asset /options.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-08 23:58:42 +0200
+Served asset /agenda.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-08 23:58:42 +0200
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-08 23:58:42 +0200
+Served asset /options.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-08 23:58:42 +0200
+Served asset /logout.js - 304 Not Modified (0ms)
+
+
+Started GET "/agenda/week/19" for 127.0.0.1 at 2012-07-08 23:58:45 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"19"}
+Completed 500 Internal Server Error in 574ms
+
+ArgumentError (invalid date):
+  app/controllers/agenda_controller.rb:81:in `commercial'
+  app/controllers/agenda_controller.rb:81:in `week'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (59.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (76.5ms)
+
+
+Started GET "/agenda/week/18" for 127.0.0.1 at 2012-07-08 23:59:10 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"18"}
+  Rendered agenda/_agenda.html.erb (0.3ms)
+  Rendered agenda/week.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 547ms (Views: 37.4ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-08 23:59:10 +0200
+Served asset /login.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-08 23:59:10 +0200
+Served asset /agenda.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-08 23:59:10 +0200
+Served asset /options.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-08 23:59:10 +0200
+Served asset /logout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-08 23:59:10 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-08 23:59:10 +0200
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-08 23:59:10 +0200
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-08 23:59:10 +0200
+Served asset /agenda.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-08 23:59:10 +0200
+Served asset /logout.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-08 23:59:10 +0200
+Served asset /options.js - 304 Not Modified (0ms)
+
+
+Started GET "/agenda/week/19" for 127.0.0.1 at 2012-07-08 23:59:19 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"19"}
+Completed 500 Internal Server Error in 482ms
+
+ArgumentError (invalid date):
+  app/controllers/agenda_controller.rb:81:in `commercial'
+  app/controllers/agenda_controller.rb:81:in `week'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-09 00:01:50 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 246ms (Views: 173.7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 00:01:51 +0200
+Served asset /jquery_ujs.js - 200 OK (6ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-09 00:01:51 +0200
+Served asset /login.css - 200 OK (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 00:01:51 +0200
+Served asset /jquery.js - 200 OK (13ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-09 00:01:51 +0200
+Served asset /agenda.css - 200 OK (11ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-09 00:01:51 +0200
+Served asset /logout.css - 200 OK (4ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-09 00:01:51 +0200
+Served asset /options.css - 200 OK (3ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-09 00:01:51 +0200
+Served asset /agenda.js - 200 OK (8ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-09 00:01:51 +0200
+Served asset /login.js - 200 OK (3ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-09 00:01:51 +0200
+Served asset /logout.js - 200 OK (3ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-09 00:01:51 +0200
+Served asset /options.js - 200 OK (3ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-09 00:01:53 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6y6HwAn6Rhm9o1pW7/wTWFP8Uj65ibKdurD9e0otDe8=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 701ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-09 00:01:54 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 123ms (Views: 40.5ms)
+
+
+Started GET "/login/project/125" for 127.0.0.1 at 2012-07-09 00:01:56 +0200
+Processing by LoginController#project as HTML
+  Parameters: {"project_id"=>"125"}
+Redirected to http://localhost:3000/login/category
+Completed 302 Found in 197ms
+
+
+Started GET "/login/category" for 127.0.0.1 at 2012-07-09 00:01:56 +0200
+Processing by LoginController#category as HTML
+  Rendered login/category.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 230ms (Views: 42.3ms)
+
+
+Started GET "/login/category/trainee" for 127.0.0.1 at 2012-07-09 00:01:59 +0200
+Processing by LoginController#category as HTML
+  Parameters: {"category_id"=>"trainee"}
+Redirected to http://localhost:3000/login/branch
+Completed 302 Found in 207ms
+
+
+Started GET "/login/branch" for 127.0.0.1 at 2012-07-09 00:01:59 +0200
+Processing by LoginController#branch as HTML
+  Rendered login/branch.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 542ms (Views: 52.9ms)
+
+
+Started GET "/login/branch/106/false" for 127.0.0.1 at 2012-07-09 00:02:01 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"106", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 326ms (Views: 31.2ms)
+
+
+Started GET "/login/branch/535/false" for 127.0.0.1 at 2012-07-09 00:02:03 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"535", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 257ms (Views: 29.1ms)
+
+
+Started GET "/login/branch/537/true" for 127.0.0.1 at 2012-07-09 00:02:05 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"537", "leaf"=>"true"}
+Redirected to http://localhost:3000/agenda/week
+Completed 302 Found in 1378ms
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-09 00:02:06 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/_agenda.html.erb (2.6ms)
+  Rendered agenda/week.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 307ms (Views: 52.6ms)
+
+
+Started GET "/options" for 127.0.0.1 at 2012-07-09 00:02:11 +0200
+Processing by OptionsController#options as HTML
+  Rendered options/options.html.erb (27.5ms)
+Completed 200 OK in 35ms (Views: 33.3ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-09 00:02:13 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/_agenda.html.erb (0.4ms)
+  Rendered agenda/week.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 1265ms (Views: 37.4ms)
+
+
+Started GET "/agenda/week/45" for 127.0.0.1 at 2012-07-09 00:02:18 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"45"}
+  Rendered agenda/_agenda.html.erb (0.8ms)
+  Rendered agenda/week.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 406ms (Views: 39.0ms)
+
+
+Started GET "/agenda/week/19" for 127.0.0.1 at 2012-07-09 00:02:22 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"19"}
+  Rendered agenda/_agenda.html.erb (3.1ms)
+  Rendered agenda/week.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 477ms (Views: 91.9ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-09 00:02:22 +0200
+Served asset /agenda.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-09 00:02:22 +0200
+Served asset /login.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 00:02:22 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 00:02:22 +0200
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-09 00:02:22 +0200
+Served asset /options.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-09 00:02:22 +0200
+Served asset /logout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-09 00:02:22 +0200
+Served asset /agenda.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-09 00:02:22 +0200
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-09 00:02:22 +0200
+Served asset /options.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-09 00:02:22 +0200
+Served asset /logout.js - 304 Not Modified (1ms)
+
+
+Started GET "/agenda/week/18" for 127.0.0.1 at 2012-07-09 00:02:29 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"18"}
+Completed 500 Internal Server Error in 518ms
+
+ArgumentError (invalid date):
+  app/controllers/agenda_controller.rb:81:in `commercial'
+  app/controllers/agenda_controller.rb:81:in `week'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.6ms)
+
+
+Started GET "/agenda/week/18" for 127.0.0.1 at 2012-07-09 00:02:34 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"18"}
+Completed 500 Internal Server Error in 442ms
+
+ArgumentError (invalid date):
+  app/controllers/agenda_controller.rb:81:in `commercial'
+  app/controllers/agenda_controller.rb:81:in `week'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-09 00:02:49 +0200
+Processing by LoginController#login as HTML
+Redirected to http://localhost:3000/agenda
+Completed 302 Found in 4ms
+
+
+Started GET "/agenda" for 127.0.0.1 at 2012-07-09 00:02:49 +0200
+Processing by AgendaController#all as HTML
+  Rendered agenda/_agenda.html.erb (155.8ms)
+  Rendered agenda/all.html.erb within layouts/application (158.4ms)
+Completed 200 OK in 1746ms (Views: 185.6ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-09 00:02:51 +0200
+Served asset /login.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-09 00:02:51 +0200
+Served asset /logout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-09 00:02:51 +0200
+Served asset /agenda.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-09 00:02:51 +0200
+Served asset /options.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 00:02:51 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 00:02:51 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-09 00:02:51 +0200
+Served asset /options.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-09 00:02:51 +0200
+Served asset /agenda.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-09 00:02:51 +0200
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-09 00:02:51 +0200
+Served asset /logout.js - 304 Not Modified (0ms)
+
+
+Started GET "/options" for 127.0.0.1 at 2012-07-09 00:02:58 +0200
+Processing by OptionsController#options as HTML
+  Rendered options/options.html.erb (25.6ms)
+Completed 200 OK in 31ms (Views: 30.1ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-09 00:03:00 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/_agenda.html.erb (0.7ms)
+  Rendered agenda/week.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 557ms (Views: 94.3ms)
+
+
+Started GET "/agenda/week/46" for 127.0.0.1 at 2012-07-09 00:03:03 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"46"}
+  Rendered agenda/_agenda.html.erb (0.4ms)
+  Rendered agenda/week.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 267ms (Views: 35.5ms)
+
+
+Started GET "/options" for 127.0.0.1 at 2012-07-09 00:03:07 +0200
+Processing by OptionsController#options as HTML
+  Rendered options/options.html.erb (25.6ms)
+Completed 200 OK in 31ms (Views: 30.4ms)
+
+
+Started GET "/agenda/day" for 127.0.0.1 at 2012-07-09 00:03:11 +0200
+Processing by AgendaController#day as HTML
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/day.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 526ms (Views: 43.9ms)
+
+
+Started GET "/agenda/day/46/0" for 127.0.0.1 at 2012-07-09 00:03:14 +0200
+Processing by AgendaController#day as HTML
+  Parameters: {"week_id"=>"46", "day_id"=>"0"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/day.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 1807ms (Views: 94.1ms)
+
+
+Started GET "/options" for 127.0.0.1 at 2012-07-09 00:03:37 +0200
+Processing by OptionsController#options as HTML
+  Rendered options/options.html.erb (24.4ms)
+Completed 200 OK in 31ms (Views: 30.4ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-09 00:03:43 +0200
+Processing by AgendaController#week as HTML
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (undefined class/module Ade::):
+  app/controllers/application_controller.rb:18:in `load'
+  app/controllers/application_controller.rb:18:in `load_ade'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.3ms)
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-09 00:03:51 +0200
+Processing by AgendaController#week as HTML
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (undefined class/module Ade::):
+  app/controllers/application_controller.rb:18:in `load'
+  app/controllers/application_controller.rb:18:in `load_ade'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.2ms)
+
+
+Started GET "/agenda/day/46/0" for 127.0.0.1 at 2012-07-09 00:03:53 +0200
+Processing by AgendaController#day as HTML
+  Parameters: {"week_id"=>"46", "day_id"=>"0"}
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (undefined class/module Ade::):
+  app/controllers/application_controller.rb:18:in `load'
+  app/controllers/application_controller.rb:18:in `load_ade'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (62.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (79.1ms)
+
+
+Started GET "/agenda/day" for 127.0.0.1 at 2012-07-09 00:03:55 +0200
+Processing by AgendaController#day as HTML
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (undefined class/module Ade::):
+  app/controllers/application_controller.rb:18:in `load'
+  app/controllers/application_controller.rb:18:in `load_ade'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.5ms)
+
+
+Started GET "/agenda" for 127.0.0.1 at 2012-07-09 00:03:59 +0200
+Processing by AgendaController#all as HTML
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (undefined class/module Ade::):
+  app/controllers/application_controller.rb:18:in `load'
+  app/controllers/application_controller.rb:18:in `load_ade'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.5ms)
+
+
+Started GET "/agenda" for 127.0.0.1 at 2012-07-09 00:04:02 +0200
+Processing by AgendaController#all as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :check_logged_in rendered or redirected
+Completed 302 Found in 2ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-09 00:04:02 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 57ms (Views: 29.7ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-09 00:04:02 +0200
+Served asset /login.css - 200 OK (7ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-09 00:04:02 +0200
+Served asset /agenda.css - 200 OK (0ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-09 00:04:02 +0200
+Served asset /logout.css - 200 OK (0ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-09 00:04:02 +0200
+Served asset /options.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 00:04:02 +0200
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 00:04:02 +0200
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-09 00:04:02 +0200
+Served asset /agenda.js - 200 OK (59ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-09 00:04:02 +0200
+Served asset /login.js - 200 OK (1ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-09 00:04:02 +0200
+Served asset /logout.js - 200 OK (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-09 00:04:02 +0200
+Served asset /options.js - 200 OK (0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-09 00:04:07 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4roCP5M5KDr8Zx9juF8O7vgljEWLQLj4WpgKPbg+9a0=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 659ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-09 00:04:08 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 114ms (Views: 36.5ms)
+
+
+Started GET "/login/project/125" for 127.0.0.1 at 2012-07-09 00:04:10 +0200
+Processing by LoginController#project as HTML
+  Parameters: {"project_id"=>"125"}
+Redirected to http://localhost:3000/login/category
+Completed 302 Found in 252ms
+
+
+Started GET "/login/category" for 127.0.0.1 at 2012-07-09 00:04:10 +0200
+Processing by LoginController#category as HTML
+  Rendered login/category.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 204ms (Views: 42.2ms)
+
+
+Started GET "/login/category/trainee" for 127.0.0.1 at 2012-07-09 00:04:14 +0200
+Processing by LoginController#category as HTML
+  Parameters: {"category_id"=>"trainee"}
+Redirected to http://localhost:3000/login/branch
+Completed 302 Found in 375ms
+
+
+Started GET "/login/branch" for 127.0.0.1 at 2012-07-09 00:04:14 +0200
+Processing by LoginController#branch as HTML
+  Rendered login/branch.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 709ms (Views: 51.0ms)
+
+
+Started GET "/login/branch/106/false" for 127.0.0.1 at 2012-07-09 00:04:17 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"106", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 1370ms (Views: 31.5ms)
+
+
+Started GET "/login/branch/535/false" for 127.0.0.1 at 2012-07-09 00:04:20 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"535", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 291ms (Views: 28.4ms)
+
+
+Started GET "/login/branch/537/true" for 127.0.0.1 at 2012-07-09 00:04:22 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"537", "leaf"=>"true"}
+Redirected to http://localhost:3000/agenda/week
+Completed 302 Found in 1259ms
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-09 00:04:23 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/_agenda.html.erb (0.5ms)
+  Rendered agenda/week.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 349ms (Views: 34.2ms)
+
+
+Started GET "/agenda/week/45" for 127.0.0.1 at 2012-07-09 00:04:28 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"45"}
+  Rendered agenda/_agenda.html.erb (0.7ms)
+  Rendered agenda/week.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 330ms (Views: 39.1ms)
+
+
+Started GET "/options" for 127.0.0.1 at 2012-07-09 00:04:31 +0200
+Processing by OptionsController#options as HTML
+  Rendered options/options.html.erb (82.4ms)
+Completed 200 OK in 87ms (Views: 86.9ms)
+
+
+Started GET "/agenda/week/45" for 127.0.0.1 at 2012-07-09 00:04:33 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"45"}
+  Rendered agenda/_agenda.html.erb (0.4ms)
+  Rendered agenda/week.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 481ms (Views: 36.4ms)
+
+
+Started GET "/agenda/week/20" for 127.0.0.1 at 2012-07-09 00:04:37 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"20"}
+  Rendered agenda/_agenda.html.erb (2.0ms)
+  Rendered agenda/week.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 522ms (Views: 32.7ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-09 00:04:38 +0200
+Served asset /agenda.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-09 00:04:38 +0200
+Served asset /login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-09 00:04:38 +0200
+Served asset /options.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 00:04:38 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-09 00:04:38 +0200
+Served asset /logout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 00:04:38 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-09 00:04:38 +0200
+Served asset /agenda.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-09 00:04:38 +0200
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-09 00:04:38 +0200
+Served asset /logout.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-09 00:04:38 +0200
+Served asset /options.js - 304 Not Modified (0ms)
+
+
+Started GET "/agenda/week/19" for 127.0.0.1 at 2012-07-09 00:04:40 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"19"}
+  Rendered agenda/_agenda.html.erb (54.2ms)
+  Rendered agenda/week.html.erb within layouts/application (58.6ms)
+Completed 200 OK in 501ms (Views: 87.4ms)
+
+
+Started GET "/agenda/week/18" for 127.0.0.1 at 2012-07-09 00:04:43 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"18"}
+Completed 500 Internal Server Error in 351ms
+
+ArgumentError (invalid date):
+  app/controllers/agenda_controller.rb:83:in `commercial'
+  app/controllers/agenda_controller.rb:83:in `week'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.0ms)
+
+
+Started GET "/agenda/week/19" for 127.0.0.1 at 2012-07-09 00:07:44 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"19"}
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (undefined class/module Ade::):
+  app/controllers/application_controller.rb:18:in `load'
+  app/controllers/application_controller.rb:18:in `load_ade'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-09 00:07:47 +0200
+Processing by LoginController#login as HTML
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (undefined class/module Ade::):
+  app/controllers/application_controller.rb:18:in `load'
+  app/controllers/application_controller.rb:18:in `load_ade'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-09 00:07:51 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 113ms (Views: 28.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 00:07:51 +0200
+Served asset /jquery_ujs.js - 200 OK (15ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-09 00:07:51 +0200
+Served asset /agenda.css - 200 OK (0ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-09 00:07:51 +0200
+Served asset /logout.css - 200 OK (0ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-09 00:07:51 +0200
+Served asset /login.css - 200 OK (0ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-09 00:07:51 +0200
+Served asset /options.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 00:07:51 +0200
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-09 00:07:51 +0200
+Served asset /agenda.js - 200 OK (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-09 00:07:51 +0200
+Served asset /logout.js - 200 OK (2ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-09 00:07:51 +0200
+Served asset /options.js - 200 OK (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-09 00:07:51 +0200
+Served asset /login.js - 200 OK (0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-09 00:07:54 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p56cpJmr55ZQ6Y4EpH/f2koS+RXSpxVIvPxpXQXxXCg=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 721ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-09 00:07:55 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 132ms (Views: 34.3ms)
+
+
+Started GET "/login/project/125" for 127.0.0.1 at 2012-07-09 00:07:59 +0200
+Processing by LoginController#project as HTML
+  Parameters: {"project_id"=>"125"}
+Redirected to http://localhost:3000/login/category
+Completed 302 Found in 537ms
+
+
+Started GET "/login/category" for 127.0.0.1 at 2012-07-09 00:07:59 +0200
+Processing by LoginController#category as HTML
+  Rendered login/category.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 322ms (Views: 39.3ms)
+
+
+Started GET "/login/category/trainee" for 127.0.0.1 at 2012-07-09 00:08:02 +0200
+Processing by LoginController#category as HTML
+  Parameters: {"category_id"=>"trainee"}
+Redirected to http://localhost:3000/login/branch
+Completed 302 Found in 239ms
+
+
+Started GET "/login/branch" for 127.0.0.1 at 2012-07-09 00:08:02 +0200
+Processing by LoginController#branch as HTML
+  Rendered login/branch.html.erb within layouts/application (74.6ms)
+Completed 200 OK in 572ms (Views: 103.1ms)
+
+
+Started GET "/login/branch/106/false" for 127.0.0.1 at 2012-07-09 00:08:06 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"106", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 306ms (Views: 29.2ms)
+
+
+Started GET "/login/branch/535/false" for 127.0.0.1 at 2012-07-09 00:08:09 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"535", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 304ms (Views: 31.8ms)
+
+
+Started GET "/login/branch/537/true" for 127.0.0.1 at 2012-07-09 00:08:15 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"537", "leaf"=>"true"}
+Redirected to http://localhost:3000/agenda/week
+Completed 302 Found in 1284ms
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-09 00:08:16 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/_agenda.html.erb (0.4ms)
+  Rendered agenda/week.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 268ms (Views: 95.6ms)
+
+
+Started GET "/agenda/week/45" for 127.0.0.1 at 2012-07-09 00:08:25 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"45"}
+  Rendered agenda/_agenda.html.erb (0.5ms)
+  Rendered agenda/week.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 1693ms (Views: 36.0ms)
+
+
+Started GET "/agenda/week/20" for 127.0.0.1 at 2012-07-09 00:08:30 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"20"}
+  Rendered agenda/_agenda.html.erb (3.1ms)
+  Rendered agenda/week.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 612ms (Views: 34.0ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-09 00:08:31 +0200
+Served asset /login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-09 00:08:31 +0200
+Served asset /agenda.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 00:08:31 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 00:08:31 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-09 00:08:31 +0200
+Served asset /options.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-09 00:08:31 +0200
+Served asset /logout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-09 00:08:31 +0200
+Served asset /agenda.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-09 00:08:31 +0200
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-09 00:08:31 +0200
+Served asset /options.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-09 00:08:31 +0200
+Served asset /logout.js - 304 Not Modified (0ms)
+
+
+Started GET "/agenda/week/19" for 127.0.0.1 at 2012-07-09 00:08:34 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"19"}
+  Rendered agenda/_agenda.html.erb (1.6ms)
+  Rendered agenda/week.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 464ms (Views: 38.5ms)
+
+
+Started GET "/agenda/week/18" for 127.0.0.1 at 2012-07-09 00:08:36 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"18"}
+  Rendered agenda/_agenda.html.erb (0.1ms)
+  Rendered agenda/week.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 448ms (Views: 35.3ms)
+
+
+Started GET "/agenda/week/17" for 127.0.0.1 at 2012-07-09 00:08:40 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"17"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 370ms (Views: 38.9ms)
+
+
+Started GET "/agenda/week/16" for 127.0.0.1 at 2012-07-09 00:08:42 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"16"}
+  Rendered agenda/_agenda.html.erb (1.4ms)
+  Rendered agenda/week.html.erb within layouts/application (62.4ms)
+Completed 200 OK in 471ms (Views: 94.7ms)
+
+
+Started GET "/agenda/week/15" for 127.0.0.1 at 2012-07-09 00:08:44 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"15"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 362ms (Views: 35.4ms)
+
+
+Started GET "/agenda/week/14" for 127.0.0.1 at 2012-07-09 00:08:46 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"14"}
+  Rendered agenda/_agenda.html.erb (0.1ms)
+  Rendered agenda/week.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 1404ms (Views: 35.0ms)
+
+
+Started GET "/agenda/week/13" for 127.0.0.1 at 2012-07-09 00:08:49 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"13"}
+  Rendered agenda/_agenda.html.erb (0.1ms)
+  Rendered agenda/week.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 390ms (Views: 34.4ms)
+
+
+Started GET "/agenda/week/12" for 127.0.0.1 at 2012-07-09 00:08:50 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"12"}
+  Rendered agenda/_agenda.html.erb (0.3ms)
+  Rendered agenda/week.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 374ms (Views: 39.0ms)
+
+
+Started GET "/agenda/week/11" for 127.0.0.1 at 2012-07-09 00:08:52 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"11"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 373ms (Views: 36.0ms)
+
+
+Started GET "/agenda/week/10" for 127.0.0.1 at 2012-07-09 00:08:53 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"10"}
+  Rendered agenda/_agenda.html.erb (2.2ms)
+  Rendered agenda/week.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 1857ms (Views: 39.6ms)
+
+
+Started GET "/agenda/week/9" for 127.0.0.1 at 2012-07-09 00:09:11 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"9"}
+  Rendered agenda/_agenda.html.erb (0.1ms)
+  Rendered agenda/week.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 569ms (Views: 90.9ms)
+
+
+Started GET "/agenda/week/8" for 127.0.0.1 at 2012-07-09 00:09:13 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"8"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 457ms (Views: 37.1ms)
+
+
+Started GET "/agenda/week/7" for 127.0.0.1 at 2012-07-09 00:09:14 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"7"}
+  Rendered agenda/_agenda.html.erb (0.3ms)
+  Rendered agenda/week.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 369ms (Views: 37.2ms)
+
+
+Started GET "/agenda/week/2" for 127.0.0.1 at 2012-07-09 00:09:17 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"2"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 387ms (Views: 33.5ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-09 00:09:18 +0200
+Served asset /login.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-09 00:09:18 +0200
+Served asset /agenda.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-09 00:09:18 +0200
+Served asset /options.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 00:09:18 +0200
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 00:09:18 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-09 00:09:18 +0200
+Served asset /logout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-09 00:09:18 +0200
+Served asset /agenda.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-09 00:09:18 +0200
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-09 00:09:18 +0200
+Served asset /logout.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-09 00:09:18 +0200
+Served asset /options.js - 304 Not Modified (0ms)
+
+
+Started GET "/agenda/week/1" for 127.0.0.1 at 2012-07-09 00:09:20 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"1"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 388ms (Views: 36.2ms)
+
+
+Started GET "/agenda/week/0" for 127.0.0.1 at 2012-07-09 00:09:22 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"0"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 362ms (Views: 32.4ms)
+
+
+Started GET "/agenda/week/46" for 127.0.0.1 at 2012-07-09 00:09:32 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"46"}
+  Rendered agenda/_agenda.html.erb (0.4ms)
+  Rendered agenda/week.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 1725ms (Views: 36.0ms)
+
+
+Started GET "/agenda/week/47" for 127.0.0.1 at 2012-07-09 00:09:35 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"47"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 375ms (Views: 93.1ms)
+
+
+Started GET "/agenda/week/46" for 127.0.0.1 at 2012-07-09 00:09:38 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"46"}
+  Rendered agenda/_agenda.html.erb (0.8ms)
+  Rendered agenda/week.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 397ms (Views: 39.6ms)
+
+
+Started GET "/agenda/week/45" for 127.0.0.1 at 2012-07-09 00:09:40 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"45"}
+  Rendered agenda/_agenda.html.erb (0.4ms)
+  Rendered agenda/week.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 385ms (Views: 33.1ms)
+
+
+Started GET "/agenda/week/45" for 127.0.0.1 at 2012-07-09 00:12:45 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"45"}
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (undefined class/module Ade::):
+  app/controllers/application_controller.rb:18:in `load'
+  app/controllers/application_controller.rb:18:in `load_ade'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (76.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-09 00:12:49 +0200
+Processing by LoginController#login as HTML
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (undefined class/module Ade::):
+  app/controllers/application_controller.rb:18:in `load'
+  app/controllers/application_controller.rb:18:in `load_ade'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-09 00:12:54 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 230ms (Views: 200.8ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-09 00:12:54 +0200
+Served asset /agenda.css - 200 OK (11ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-09 00:12:54 +0200
+Served asset /login.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 00:12:54 +0200
+Served asset /jquery_ujs.js - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 00:12:54 +0200
+Served asset /jquery.js - 200 OK (8ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-09 00:12:55 +0200
+Served asset /logout.css - 200 OK (14ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-09 00:12:55 +0200
+Served asset /options.css - 200 OK (51ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-09 00:12:55 +0200
+Served asset /agenda.js - 200 OK (7ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-09 00:12:55 +0200
+Served asset /login.js - 200 OK (3ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-09 00:12:55 +0200
+Served asset /logout.js - 200 OK (3ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-09 00:12:55 +0200
+Served asset /options.js - 200 OK (3ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-09 00:12:57 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AyZuhNObOxYeBe2/+IpZBykg2S3ROJYh+X/undoZbPc=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 684ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-09 00:12:58 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 146ms (Views: 37.0ms)
+
+
+Started GET "/login/project/125" for 127.0.0.1 at 2012-07-09 00:13:00 +0200
+Processing by LoginController#project as HTML
+  Parameters: {"project_id"=>"125"}
+Redirected to http://localhost:3000/login/category
+Completed 302 Found in 193ms
+
+
+Started GET "/login/category" for 127.0.0.1 at 2012-07-09 00:13:00 +0200
+Processing by LoginController#category as HTML
+  Rendered login/category.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 240ms (Views: 94.2ms)
+
+
+Started GET "/login/category/trainee" for 127.0.0.1 at 2012-07-09 00:13:05 +0200
+Processing by LoginController#category as HTML
+  Parameters: {"category_id"=>"trainee"}
+Redirected to http://localhost:3000/login/branch
+Completed 302 Found in 244ms
+
+
+Started GET "/login/branch" for 127.0.0.1 at 2012-07-09 00:13:05 +0200
+Processing by LoginController#branch as HTML
+  Rendered login/branch.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 452ms (Views: 51.9ms)
+
+
+Started GET "/login/branch/106/false" for 127.0.0.1 at 2012-07-09 00:13:08 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"106", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 279ms (Views: 31.4ms)
+
+
+Started GET "/login/branch/535/false" for 127.0.0.1 at 2012-07-09 00:13:10 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"535", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 296ms (Views: 78.9ms)
+
+
+Started GET "/login/branch/537/true" for 127.0.0.1 at 2012-07-09 00:13:12 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"537", "leaf"=>"true"}
+Redirected to http://localhost:3000/agenda/week
+Completed 302 Found in 1364ms
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-09 00:13:13 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/_agenda.html.erb (2.6ms)
+  Rendered agenda/week.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 344ms (Views: 105.0ms)
+
+
+Started GET "/agenda/week/46" for 127.0.0.1 at 2012-07-09 00:13:16 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"46"}
+  Rendered agenda/_agenda.html.erb (0.4ms)
+  Rendered agenda/week.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 329ms (Views: 35.6ms)
+
+
+Started GET "/agenda/week/45" for 127.0.0.1 at 2012-07-09 00:13:18 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"45"}
+  Rendered agenda/_agenda.html.erb (0.6ms)
+  Rendered agenda/week.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 638ms (Views: 37.4ms)
+
+
+Started GET "/agenda/week/44" for 127.0.0.1 at 2012-07-09 00:13:20 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"44"}
+  Rendered agenda/_agenda.html.erb (0.1ms)
+  Rendered agenda/week.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 532ms (Views: 34.4ms)
+
+
+Started GET "/agenda/week/46" for 127.0.0.1 at 2012-07-09 00:13:22 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"46"}
+  Rendered agenda/_agenda.html.erb (0.6ms)
+  Rendered agenda/week.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 423ms (Views: 94.7ms)
+
+
+Started GET "/agenda/week/45" for 127.0.0.1 at 2012-07-09 00:13:31 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"45"}
+  Rendered agenda/_agenda.html.erb (0.4ms)
+  Rendered agenda/week.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 540ms (Views: 39.4ms)
+
+
+Started GET "/agenda/week/44" for 127.0.0.1 at 2012-07-09 00:13:33 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"44"}
+  Rendered agenda/_agenda.html.erb (0.1ms)
+  Rendered agenda/week.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 513ms (Views: 33.7ms)
+
+
+Started GET "/agenda/week/20" for 127.0.0.1 at 2012-07-09 00:13:38 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"20"}
+  Rendered agenda/_agenda.html.erb (1.9ms)
+  Rendered agenda/week.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 722ms (Views: 91.1ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-09 00:13:39 +0200
+Served asset /agenda.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-09 00:13:39 +0200
+Served asset /login.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-09 00:13:39 +0200
+Served asset /options.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 00:13:39 +0200
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 00:13:39 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-09 00:13:39 +0200
+Served asset /logout.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-09 00:13:39 +0200
+Served asset /agenda.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-09 00:13:39 +0200
+Served asset /login.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-09 00:13:39 +0200
+Served asset /logout.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-09 00:13:39 +0200
+Served asset /options.js - 304 Not Modified (0ms)
+
+
+Started GET "/agenda/week/19" for 127.0.0.1 at 2012-07-09 00:13:49 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"19"}
+  Rendered agenda/_agenda.html.erb (1.6ms)
+  Rendered agenda/week.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 447ms (Views: 37.7ms)
+
+
+Started GET "/agenda/week/18" for 127.0.0.1 at 2012-07-09 00:13:51 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"18"}
+  Rendered agenda/_agenda.html.erb (0.1ms)
+  Rendered agenda/week.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 455ms (Views: 87.9ms)
+
+
+Started GET "/agenda/week/17" for 127.0.0.1 at 2012-07-09 00:13:52 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"17"}
+  Rendered agenda/_agenda.html.erb (0.2ms)
+  Rendered agenda/week.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 1224ms (Views: 34.6ms)
