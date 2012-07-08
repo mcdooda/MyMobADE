@@ -9,11 +9,12 @@ Mymobade::Application.routes.draw do
   match "login/branch" => "login#branch"
   match "login/branch/:branch_id" => "login#branch"
   match "login/branch/:branch_id/:leaf" => "login#branch"
-
-  get "agenda/day"
-  get "agenda/week"
-  get "agenda/month"
-  get "agenda/all"
+  
+  match "agenda" => "agenda#all"
+  match "agenda/week" => "agenda#week"
+  match "agenda/week/:week_id" => "agenda#week"
+  match "agenda/day" => "agenda#day"
+  match "agenda/day/:week_id/:day_id" => "agenda#day"
 
   match "logout" => "logout#logout"
   

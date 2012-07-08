@@ -1,0 +1,21 @@
+<% if not @agenda_per_day.empty? %>
+  <% @agenda_per_day.each do |date, activities| %>
+    <ul data-role="listview" data-inset="true">
+      <li data-role="list-divider"><%= date %></li>
+      <% activities.each do |activity| %>
+        <li>
+          <h3><%= activity.name %></h3>
+          <p><strong><%= activity.hour %></strong> - <strong><%= get_activity_end activity.hour, activity.duration %></strong></p>
+          <p><%= activity.rooms %></p>
+          <% unless activity.teachers.blank? %>
+            <p>Enseignants : <%= activity.teachers %></p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% else %>
+  <div class="ui-body ui-body-<%= info_theme %> ui-corner-all">
+    Aucune activit&eacute;.
+  </div>
+<% end %>

@@ -15,17 +15,18 @@
 
 <div data-role="page" data-theme="<%= theme %>">
 
-  <div data-role="header">
+  <div data-role="header" data-position="fixed">
     <h1><%= @title %></h1>
     <% if logged_in? %>
-      <a href="<%= url_for controller: :logout, action: :logout %>" data-icon="delete" data-iconpos="notext">D&eacute;connexion</a>
-      <a href="<%= url_for controller: :options, action: :options %>" data-icon="gear" data-iconpos="notext" data-rel="dialog" data-transition="flip">Options</a>
+      <a href="<%= url_for controller: :options, action: :options %>" data-icon="gear" data-rel="dialog" data-transition="flip" class="ui-btn-right">Options</a>
     <% end %>
   </div>
   
   <div data-role="content">
     <%= yield %>
   </div>
+  
+  <%= yield :footer %>
   
 </div>
 

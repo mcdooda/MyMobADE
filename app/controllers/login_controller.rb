@@ -59,9 +59,10 @@ class LoginController < ApplicationController
     else
       @ade.branch_id = params[:branch_id]
       @ade.setup_table_view_options
+      @ade.find_current_week
       
       log_in
-      redirect_to controller: :agenda, action: :all
+      redirect_to controller: :agenda, action: :week
     end
   end
   

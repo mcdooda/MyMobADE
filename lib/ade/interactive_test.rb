@@ -74,6 +74,9 @@ end
 puts "* setting up ade table view options"
 r.setup_table_view_options
 
+puts "* looking for ade week number"
+r.find_current_week
+
 puts "choose agenda view:"
 puts "1. Full"
 puts "2. Week"
@@ -93,3 +96,5 @@ agenda.each do |activity|
   puts activity
   puts
 end
+
+

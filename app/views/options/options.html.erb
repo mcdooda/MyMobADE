@@ -20,13 +20,19 @@
   </div>
   
   <div data-role="content">
+  
     <ul data-role="listview" data-inset="true">
       <li data-role="list-divider">Afficher :</li>
       <li><%= link_to 'Jour', controller: :agenda, action: :day %></li>
       <li><%= link_to 'Semaine', controller: :agenda, action: :week %></li>
-      <li><%= link_to 'Mois', controller: :agenda, action: :month %></li>
       <li><%= link_to 'Tout', controller: :agenda, action: :all %></li>
     </ul>
+    
+    <ul data-role="listview" data-inset="true">
+      <li data-role="list-divider">Session :</li>
+      <li><%= link_to 'Déconnexion', controller: :logout, action: :logout %></li>
+    </ul>
+    
   </div>
   
 </div>
