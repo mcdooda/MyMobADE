@@ -486,3 +486,258 @@ Processing by AgendaController#week as HTML
   Rendered agenda/_agenda.html.erb (0.6ms)
   Rendered agenda/week.html.erb within layouts/application (5.2ms)
 Completed 200 OK in 404ms (Views: 37.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-08 23:51:42 +0200
+Processing by LoginController#login as HTML
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (undefined class/module Ade::):
+  app/controllers/application_controller.rb:18:in `load'
+  app/controllers/application_controller.rb:18:in `load_ade'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (76.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-08 23:51:47 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 160ms (Views: 133.1ms)
+
+
+Started GET "/assets/agenda.css?body=1" for 127.0.0.1 at 2012-07-08 23:51:47 +0200
+Served asset /agenda.css - 200 OK (4ms)
+
+
+Started GET "/assets/login.css?body=1" for 127.0.0.1 at 2012-07-08 23:51:47 +0200
+Served asset /login.css - 200 OK (4ms)
+
+
+Started GET "/assets/agenda.js?body=1" for 127.0.0.1 at 2012-07-08 23:51:47 +0200
+Served asset /agenda.js - 200 OK (16ms)
+
+
+Started GET "/assets/logout.css?body=1" for 127.0.0.1 at 2012-07-08 23:51:47 +0200
+Served asset /logout.css - 200 OK (4ms)
+
+
+Started GET "/assets/options.css?body=1" for 127.0.0.1 at 2012-07-08 23:51:47 +0200
+Served asset /options.css - 200 OK (8ms)
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2012-07-08 23:51:47 +0200
+Served asset /login.js - 200 OK (15ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-08 23:51:47 +0200
+Served asset /jquery.js - 200 OK (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-08 23:51:47 +0200
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/logout.js?body=1" for 127.0.0.1 at 2012-07-08 23:51:47 +0200
+Served asset /logout.js - 200 OK (51ms)
+
+
+Started GET "/assets/options.js?body=1" for 127.0.0.1 at 2012-07-08 23:51:47 +0200
+Served asset /options.js - 200 OK (3ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-08 23:51:50 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tGeajhUyNVAGR6SHd1jvPmQbajZzF57x3ygeGYd+Ww0=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 3649ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-08 23:51:54 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 261ms (Views: 39.2ms)
+
+
+Started GET "/login/project/125" for 127.0.0.1 at 2012-07-08 23:51:56 +0200
+Processing by LoginController#project as HTML
+  Parameters: {"project_id"=>"125"}
+Redirected to http://localhost:3000/login/category
+Completed 302 Found in 271ms
+
+
+Started GET "/login/category" for 127.0.0.1 at 2012-07-08 23:51:57 +0200
+Processing by LoginController#category as HTML
+  Rendered login/category.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 190ms (Views: 41.6ms)
+
+
+Started GET "/login/category/trainee" for 127.0.0.1 at 2012-07-08 23:52:01 +0200
+Processing by LoginController#category as HTML
+  Parameters: {"category_id"=>"trainee"}
+Redirected to http://localhost:3000/login/branch
+Completed 302 Found in 536ms
+
+
+Started GET "/login/branch" for 127.0.0.1 at 2012-07-08 23:52:02 +0200
+Processing by LoginController#branch as HTML
+  Rendered login/branch.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 493ms (Views: 52.4ms)
+
+
+Started GET "/login/branch/106/false" for 127.0.0.1 at 2012-07-08 23:52:04 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"106", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 308ms (Views: 31.8ms)
+
+
+Started GET "/login/branch/535/false" for 127.0.0.1 at 2012-07-08 23:52:07 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"535", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 629ms (Views: 29.7ms)
+
+
+Started GET "/login/branch/537/true" for 127.0.0.1 at 2012-07-08 23:52:09 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"537", "leaf"=>"true"}
+Redirected to http://localhost:3000/agenda/week
+Completed 302 Found in 1817ms
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-08 23:52:11 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/_agenda.html.erb (2.3ms)
+  Rendered agenda/week.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 589ms (Views: 104.3ms)
+
+
+Started GET "/agenda/week/47" for 127.0.0.1 at 2012-07-08 23:52:16 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"47"}
+  Rendered agenda/_agenda.html.erb (0.3ms)
+  Rendered agenda/week.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 438ms (Views: 39.7ms)
+
+
+Started GET "/agenda/week/46" for 127.0.0.1 at 2012-07-08 23:52:18 +0200
+Processing by AgendaController#week as HTML
+  Parameters: {"week_id"=>"46"}
+  Rendered agenda/_agenda.html.erb (0.4ms)
+  Rendered agenda/week.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 467ms (Views: 36.2ms)
+
+
+Started GET "/options" for 127.0.0.1 at 2012-07-08 23:52:21 +0200
+Processing by OptionsController#options as HTML
+  Rendered options/options.html.erb (27.5ms)
+Completed 200 OK in 34ms (Views: 33.5ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2012-07-08 23:52:23 +0200
+Processing by LogoutController#logout as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-08 23:52:23 +0200
+Processing by LoginController#login as HTML
+  Rendered login/login.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 95ms (Views: 93.4ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-08 23:52:27 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tGeajhUyNVAGR6SHd1jvPmQbajZzF57x3ygeGYd+Ww0=", "login"=>"", "password"=>"[FILTERED]", "submit"=>""}
+  Rendered login/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 31ms (Views: 29.5ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-08 23:52:29 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tGeajhUyNVAGR6SHd1jvPmQbajZzF57x3ygeGYd+Ww0=", "login"=>"", "password"=>"[FILTERED]", "submit"=>""}
+  Rendered login/login.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 28.5ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-07-08 23:52:36 +0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tGeajhUyNVAGR6SHd1jvPmQbajZzF57x3ygeGYd+Ww0=", "login"=>"voirIMA", "password"=>"[FILTERED]", "submit"=>""}
+Redirected to http://localhost:3000/login/project
+Completed 302 Found in 1080ms
+
+
+Started GET "/login/project" for 127.0.0.1 at 2012-07-08 23:52:37 +0200
+Processing by LoginController#project as HTML
+  Rendered login/project.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 237ms (Views: 33.3ms)
+
+
+Started GET "/login/project/125" for 127.0.0.1 at 2012-07-08 23:52:39 +0200
+Processing by LoginController#project as HTML
+  Parameters: {"project_id"=>"125"}
+Redirected to http://localhost:3000/login/category
+Completed 302 Found in 665ms
+
+
+Started GET "/login/category" for 127.0.0.1 at 2012-07-08 23:52:40 +0200
+Processing by LoginController#category as HTML
+  Rendered login/category.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 278ms (Views: 34.9ms)
+
+
+Started GET "/login/category/trainee" for 127.0.0.1 at 2012-07-08 23:52:47 +0200
+Processing by LoginController#category as HTML
+  Parameters: {"category_id"=>"trainee"}
+Redirected to http://localhost:3000/login/branch
+Completed 302 Found in 687ms
+
+
+Started GET "/login/branch" for 127.0.0.1 at 2012-07-08 23:52:48 +0200
+Processing by LoginController#branch as HTML
+  Rendered login/branch.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 917ms (Views: 101.5ms)
+
+
+Started GET "/login/branch/106/false" for 127.0.0.1 at 2012-07-08 23:52:50 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"106", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 404ms (Views: 29.8ms)
+
+
+Started GET "/login/branch/535/false" for 127.0.0.1 at 2012-07-08 23:52:53 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"535", "leaf"=>"false"}
+  Rendered login/branch.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 2201ms (Views: 31.2ms)
+
+
+Started GET "/login/branch/537/true" for 127.0.0.1 at 2012-07-08 23:52:57 +0200
+Processing by LoginController#branch as HTML
+  Parameters: {"branch_id"=>"537", "leaf"=>"true"}
+Redirected to http://localhost:3000/agenda/week
+Completed 302 Found in 1325ms
+
+
+Started GET "/agenda/week" for 127.0.0.1 at 2012-07-08 23:52:58 +0200
+Processing by AgendaController#week as HTML
+  Rendered agenda/_agenda.html.erb (0.7ms)
+  Rendered agenda/week.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 349ms (Views: 95.6ms)
+
+
+Started GET "/options" for 127.0.0.1 at 2012-07-08 23:56:38 +0200
+Processing by OptionsController#options as HTML
+  Rendered options/options.html.erb (24.5ms)
+Completed 200 OK in 30ms (Views: 29.2ms)
+
+
+Started GET "/agenda/day" for 127.0.0.1 at 2012-07-08 23:56:40 +0200
+Processing by AgendaController#day as HTML
+  Rendered agenda/_agenda.html.erb (0.3ms)
+  Rendered agenda/day.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 759ms (Views: 45.5ms)
