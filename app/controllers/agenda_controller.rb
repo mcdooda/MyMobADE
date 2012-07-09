@@ -60,7 +60,6 @@ class AgendaController < ApplicationController
     @next_week = nil if @next_week > @ade.last_week
     
     day = Date.commercial(Date.today.year, @ade.selected_week - (@ade.current_week - Date.today.cweek), @ade.selected_day % 7 + 1)
-    day += 7.days if Date.today.wday == 0
     
     @title = "#{get_day @ade.selected_day} #{day.day} #{get_month day.month} #{day.year}"
     
@@ -79,7 +78,20 @@ class AgendaController < ApplicationController
     @previous_week = @ade.selected_week - 1 if @ade.selected_week > 0
     @next_week = @ade.selected_week + 1 if @ade.selected_week < @ade.last_week
     
-    week = Date.commercial(Date.today.year, Date.today.cweek - (@ade.current_week - @ade.selected_week))
+    cweek = Date.today.cweek - (@ade.current_week - @ade.selected_week)
+    cyear = Date.today.year
+    
+    while cweek < 1
+      cweek += 52
+      cyear -= 1
+   	end
+   	
+   	while cweek > 52
+   	  cweek -= 52
+   	  cyear += 1
+   	end
+    
+    week = Date.commercial(cyear, cweek)
     week = week.next_week if Date.today.wday == 0
     
     @title = "Semaine du #{week.day} #{get_month week.month} #{week.year}"
