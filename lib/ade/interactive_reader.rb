@@ -485,8 +485,6 @@ module Ade
     def get_selected_week
       @page = get 'custom/modules/plannings/pianoWeeks.jsp'
       
-      puts @page.content
-      
       week_regex = /.+\((.+),/
       match = week_regex.match(@page.parser.css('.pianoselected area').first.get_attribute('href'))
       

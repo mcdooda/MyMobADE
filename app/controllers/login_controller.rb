@@ -35,6 +35,7 @@ class LoginController < ApplicationController
       redirect_to action: :category
     else
       @projects = @ade.projects
+      redirect_to action: :category if @projects.empty?
     end
   end
 

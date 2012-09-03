@@ -26,18 +26,21 @@ end
 
 puts "* looking for projects..."
 projects = r.projects
-i = 1
-projects.each do |project|
-  puts "#{i}. #{project[:name]}"
-  i += 1
+
+unless projects.empty?
+  i = 1
+  projects.each do |project|
+    puts "#{i}. #{project[:name]}"
+    i += 1
+  end
+
+  puts "project number:"
+  project_number = gets.to_i - 1
+  project = projects[project_number]
+
+  puts "* opening project #{project[:name]}..."
+  r.project = project
 end
-
-puts "project number:"
-project_number = gets.to_i - 1
-project = projects[project_number]
-
-puts "* opening project #{project[:name]}..."
-r.project = project
 
 puts "* looking for categories..."
 categories = r.categories
