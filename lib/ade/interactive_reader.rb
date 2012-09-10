@@ -7,17 +7,31 @@ module Ade
   class InteractiveReader
     
     def initialize(config)
+      # ade server information
       @config = config
       
+      # our virtual browser
       @agent = Mechanize.new
       @agent.user_agent = 'MyMobAde'
-      
       @page = nil # kept between each user input
-      @branch_level = 1
-      @leaf = false
+      
+      # login
+      @username = nil
+      @password = nil
+      @domain = nil
+      
+      # project selection
+      @project_id = nil
+      
+      # category selection
       @category_id = nil
-      @branch_id = nil
-      @logged_in = false
+      
+      # branch selection
+      @branch_level = 1
+      @branches_id = []
+      @leaf = false
+      
+      # navigation
       @current_week = nil
       @selected_week = nil
       @last_week = nil
@@ -29,11 +43,11 @@ module Ade
       @agent.cookie_jar.dump_cookiestxt strio
       ade_cookies = strio.string
       strio.close
-      [@branch_level, @leaf, @category_id, @branch_id, @config, @logged_in, @current_week, @selected_week, @last_week, @selected_day, ade_cookies]
+      [@config, @username, @password, @domain, @project_id, @category_id, @branch_level, @branches_id, @leaf, @current_week, @selected_week, @last_week, @selected_day, ade_cookies]
     end
     
     def marshal_load(array)
-      @branch_level, @leaf, @category_id, @branch_id, @config, @logged_in, @current_week, @selected_week, @last_week, @selected_day, ade_cookies = array
+      @config, @username, @password, @domain, @project_id, @category_id, @branch_level, @branches_id, @leaf, @current_week, @selected_week, @last_week, @selected_day, ade_cookies = array
       @agent = Mechanize.new
       strio = StringIO.new
       strio << ade_cookies
@@ -66,16 +80,28 @@ module Ade
       @selected_day
     end
     
-    def login(login, password, domain)
+    def username
+      @username
+    end
+    
+    def password
+      @password
+    end
+    
+    def domain
+      @domain
+    end
+    
+    def login(username, password, domain)
       @page = get 'standard/index.jsp?lang=FR'
       
       login_form = @page.form_with({ name: 'projects' })
       if domain
-        login_form.field_with({ name: 'username' }).value = login
+        login_form.field_with({ name: 'username' }).value = username
         login_form.field_with({ name: 'password' }).value = password
         login_form.field_with({ name: 'domain' }).value = domain
       else
-        login_form.field_with({ name: 'login' }).value = login
+        login_form.field_with({ name: 'login' }).value = username
         login_form.field_with({ name: 'password' }).value = password
       end
       
@@ -86,14 +112,20 @@ module Ade
       
       case match[1]
       when 'projects' # may be something else if there is only one project
-        @logged_in = true
+        @username = username
+        @password = password
+        @domain = domain
       else # probably index
         
       end
     end
     
     def logged_in?
-      @logged_in
+      !@username.nil?
+    end
+    
+    def project_id
+      @project_id
     end
     
     def projects
@@ -115,12 +147,18 @@ module Ade
     end
     
     def project_id=(project_id)
+      @project_id = project_id
+      
       @page = get 'standard/projects.jsp' if @page.nil?
       
       projects_form = @page.form_with name: 'projects'
       projects_form.field_with({ name: 'projectId' }).value = project_id
       
       @agent.submit projects_form
+    end
+    
+    def category_id
+      @category_id
     end
     
     def categories
@@ -148,6 +186,10 @@ module Ade
       @page = get('standard/gui/tree.jsp?category=' + category_id + '&expand=false&forceLoad=false&reload=false&scroll=0')
     end
     
+    def branches_id
+      @branches_id
+    end
+    
     def branches
       branches = []
       
@@ -161,7 +203,7 @@ module Ade
           get('standard/gui/tree.jsp?category=' + @category_id + '&expand=true&forceLoad=false&reload=false&scroll=0')
           @page = get('standard/gui/tree.jsp?category=' + @category_id + '&expand=true&forceLoad=false&reload=false&scroll=0')
         else
-          @page = get('standard/gui/tree.jsp?branchId=' + @branch_id + '&expand=false&forceLoad=false&reload=false&scroll=0')
+          @page = get('standard/gui/tree.jsp?branchId=' + @branches_id.last + '&expand=false&forceLoad=false&reload=false&scroll=0')
         end
       end
       
@@ -191,6 +233,7 @@ module Ade
     end
     
     def branch_id=(branch_id)
+      @branches_id << branch_id
       if not @leaf
         @page = get('standard/gui/tree.jsp?branchId=' + branch_id + '&expand=false&forceLoad=false&reload=false&scroll=0')
         @branch_level += 1

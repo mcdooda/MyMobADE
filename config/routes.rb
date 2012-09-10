@@ -19,6 +19,8 @@ Mymobade::Application.routes.draw do
   match "logout" => "logout#logout"
   
   match "options" => "options#options"
+  
+  match "bookmark/:username/:password/:domain_/:project_id/:category_id/:branches_id" => "bookmark#login"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

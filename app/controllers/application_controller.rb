@@ -1,6 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
+  def check_logged_in
+    unless logged_in?
+      clear_cookies
+      redirect_to controller: :login, action: :login
+    end
+  end
+  
   def logged_in?
     cookies[:logged_in] != nil
   end

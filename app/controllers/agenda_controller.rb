@@ -5,13 +5,6 @@ class AgendaController < ApplicationController
   after_filter :save_ade
 
   private
-  
-  def check_logged_in
-    unless logged_in?
-      clear_cookies
-      redirect_to controller: :login, action: :login
-    end
-  end
 
   def sort_agenda_per_day
     @agenda_per_day = {}

@@ -18,7 +18,7 @@
   <div data-role="header" data-position="fixed">
     <h1><%= @title %></h1>
     <% if logged_in? %>
-      <a href="<%= url_for controller: :options, action: :options %>" data-icon="gear" data-iconpos="notext" data-rel="dialog" data-transition="flip" class="ui-btn-right">Options</a>
+      <a href="<%= url_for controller: :options, action: :options %>" data-icon="gear" data-iconpos="notext" data-rel="dialog" class="ui-btn-right">Options</a>
     <% end %>
   </div>
   
