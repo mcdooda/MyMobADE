@@ -7,6 +7,8 @@ module Ade
   class InteractiveReader
     
     def initialize(config)
+      @debug_mode = false
+      
       # ade server information
       @config = config
       
@@ -556,10 +558,16 @@ module Ade
     end
     
     def get(page)
-      puts
-      puts
-      puts "***** LOADING: #{@config.ade_path + page}"
+      if @debug_mode
+        puts
+        puts
+        puts "***** LOADING: #{@config.ade_path + page}"
+      end
       @agent.get(@config.ade_path + page)
+    end
+    
+    def debug_mode=(debug_mode)
+      @debug_mode = debug_mode
     end
     
   end

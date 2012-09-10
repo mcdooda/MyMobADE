@@ -6,6 +6,7 @@ require_relative 'activity.rb'
 require_relative 'schools/ujf.rb'
 
 r = Ade::InteractiveReader.new Ade::Schools::Ujf.new
+r.debug_mode = true
 
 while not r.logged_in?
   puts "login:"
