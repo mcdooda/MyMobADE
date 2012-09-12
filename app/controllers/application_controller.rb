@@ -1,3 +1,6 @@
+require_dependency 'lib/ade/schools/ujf'
+require_dependency 'lib/ade/interactive_reader'
+
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
