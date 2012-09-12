@@ -1,6 +1,3 @@
-require_dependency 'lib/ade/schools/ujf'
-require_dependency 'lib/ade/interactive_reader'
-
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
@@ -25,6 +22,11 @@ class ApplicationController < ActionController::Base
   
   def load_ade
     if cookies[:ade]
+      
+      # forces reloading and fixes the require_dependency bug on heroku
+      Ade::InteractiveReader
+      Ade::Schools::Ujf
+      
       @ade = Marshal.load cookies[:ade]
     else
       @ade = Ade::InteractiveReader.new Ade::Schools::Ujf.new
