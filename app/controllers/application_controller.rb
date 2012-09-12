@@ -28,6 +28,7 @@ class ApplicationController < ActionController::Base
       Ade::Schools::Ujf
       
       @ade = Marshal.load cookies[:ade]
+      @ade.debug_mode = true
     else
       @ade = Ade::InteractiveReader.new Ade::Schools::Ujf.new
     end

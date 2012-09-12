@@ -40,6 +40,10 @@ module Ade
       @selected_day = nil
     end
     
+    def debug_mode=(debug_mode)
+      @debug_mode = debug_mode
+    end
+    
     def marshal_dump
       strio = StringIO.new
       @agent.cookie_jar.dump_cookiestxt strio
@@ -113,12 +117,12 @@ module Ade
       match = location_regex.match(@agent.page.content)
       
       case match[1]
-      when 'projects' # may be something else if there is only one project
+      when 'projects'
         @username = username
         @password = password
         @domain = domain
       else # probably index
-        
+        raise Exceptions::LoginError
       end
     end
     
@@ -538,36 +542,40 @@ module Ade
     
     def parse_agenda
       agenda = []
-      i = 1
-      @page.parser.css('tr').each do |tr|
-        if tr.get_attribute('class').nil?
-          tds = tr.css 'td'
-          activity = Activity.new({
-            date: tds[0].children.first.content,
-            name: tds[1].content,
-            day: tds[2].content,
-            hour: tds[3].content,
-            duration: tds[4].content,
-            teachers: tds[5].content,
-            rooms: tds[6].content
-          })
-          agenda << activity
+      if @page.parser.css('body').empty?
+        raise Exceptions::DisconnectedError
+      else
+        @page.parser.css('tr').each do |tr|
+          if tr.get_attribute('class').nil?
+            tds = tr.css 'td'
+            activity = Activity.new({
+              date: tds[0].children.first.content,
+              name: tds[1].content,
+              day: tds[2].content,
+              hour: tds[3].content,
+              duration: tds[4].content,
+              teachers: tds[5].content,
+              rooms: tds[6].content
+            })
+            agenda << activity
+          end
         end
       end
       agenda
     end
     
     def get(page)
+      page_content = @agent.get(@config.ade_path + page)
       if @debug_mode
         puts
         puts
         puts "***** LOADING: #{@config.ade_path + page}"
+        puts
+        puts "====================================================="
+        puts page_content.content
+        puts "====================================================="
       end
-      @agent.get(@config.ade_path + page)
-    end
-    
-    def debug_mode=(debug_mode)
-      @debug_mode = debug_mode
+      page_content
     end
     
   end

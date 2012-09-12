@@ -16,13 +16,13 @@ class LoginController < ApplicationController
         password = params[:password]
         domain = params[:domain] unless params[:domain].blank?
         
-        @ade.login login, password, domain
-        
-        if @ade.logged_in?
+        begin
+          @ade.login login, password, domain
           redirect_to action: :project
-        else
+        rescue Ade::Exceptions::LoginError
           flash.now[:error] = 'Mauvais login ou mot de passe'
         end
+        
       end
     end
   end

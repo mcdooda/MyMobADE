@@ -4,11 +4,13 @@ require_relative 'interactive_reader.rb'
 require_relative 'config.rb'
 require_relative 'activity.rb'
 require_relative 'schools/ujf.rb'
+require_relative 'exceptions/login_error.rb'
+require_relative 'exceptions/disconnected_error.rb'
 
 r = Ade::InteractiveReader.new Ade::Schools::Ujf.new
-r.debug_mode = true
+#r.debug_mode = true
 
-while not r.logged_in?
+while true
   puts "login:"
   login = gets.strip
 
@@ -20,9 +22,13 @@ while not r.logged_in?
   domain = nil if domain.empty?
 
   puts "* logging in..."
-  r.login login, password, domain
+  begin
+    r.login login, password, domain
+    break
+  rescue Ade::Exceptions::LoginError
+    puts "!!! try again:"
+  end
   
-  puts "!!! try again:" unless r.logged_in?
 end
 
 puts "* looking for projects..."

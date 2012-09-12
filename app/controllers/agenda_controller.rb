@@ -31,32 +31,36 @@ class AgendaController < ApplicationController
       @ade.selected_day = params[:day_id].to_i
     end
     
-    @agenda = @ade.day_agenda
-    
-    @current_week = @ade.current_week
-    @current_day = @ade.current_day
-    
-    @previous_week = @ade.selected_week
-    @next_week = @previous_week
-    @previous_day = @ade.selected_day - 1
-    @next_day = @ade.selected_day + 1
-    
-    if @previous_day < 0
-      @previous_week -= 1
-      @previous_day = 6
-    elsif @next_day > 6
-      @next_week += 1
-      @next_day = 0
+    begin
+      @agenda = @ade.day_agenda
+      
+      @current_week = @ade.current_week
+      @current_day = @ade.current_day
+      
+      @previous_week = @ade.selected_week
+      @next_week = @previous_week
+      @previous_day = @ade.selected_day - 1
+      @next_day = @ade.selected_day + 1
+      
+      if @previous_day < 0
+        @previous_week -= 1
+        @previous_day = 6
+      elsif @next_day > 6
+        @next_week += 1
+        @next_day = 0
+      end
+      
+      @previous_week = nil if @previous_week < 0
+      @next_week = nil if @next_week > @ade.last_week
+      
+      day = Date.commercial(Date.today.year, @ade.selected_week - (@ade.current_week - Date.today.cweek), @ade.selected_day % 7 + 1)
+      
+      @title = "#{get_day @ade.selected_day} #{day.day} #{get_month day.month} #{day.year}"
+      
+      sort_agenda_per_day
+    rescue Ade::Exceptions::DisconnectedError
+      flash.now[:error] = 'Vous avez été déconnecté d\'ADE. Veuillez vous reconnecter.'
     end
-    
-    @previous_week = nil if @previous_week < 0
-    @next_week = nil if @next_week > @ade.last_week
-    
-    day = Date.commercial(Date.today.year, @ade.selected_week - (@ade.current_week - Date.today.cweek), @ade.selected_day % 7 + 1)
-    
-    @title = "#{get_day @ade.selected_day} #{day.day} #{get_month day.month} #{day.year}"
-    
-    sort_agenda_per_day
   end
 
   def week
@@ -64,37 +68,45 @@ class AgendaController < ApplicationController
       @ade.selected_week = params[:week_id].to_i
     end
     
-    @agenda = @ade.week_agenda
-    
-    @current_week = @ade.current_week
-    
-    @previous_week = @ade.selected_week - 1 if @ade.selected_week > 0
-    @next_week = @ade.selected_week + 1 if @ade.selected_week < @ade.last_week
-    
-    cweek = Date.today.cweek - (@ade.current_week - @ade.selected_week)
-    cyear = Date.today.year
-    
-    while cweek < 1
-      cweek += 52
-      cyear -= 1
-   	end
-   	
-   	while cweek > 52
-   	  cweek -= 52
-   	  cyear += 1
-   	end
-    
-    week = Date.commercial(cyear, cweek)
-    week = week.next_week if Date.today.wday == 0
-    
-    @title = "Semaine du #{week.day} #{get_month week.month} #{week.year}"
-    sort_agenda_per_day
+    begin
+      @agenda = @ade.week_agenda
+      
+      @current_week = @ade.current_week
+      
+      @previous_week = @ade.selected_week - 1 if @ade.selected_week > 0
+      @next_week = @ade.selected_week + 1 if @ade.selected_week < @ade.last_week
+      
+      cweek = Date.today.cweek - (@ade.current_week - @ade.selected_week)
+      cyear = Date.today.year
+      
+      while cweek < 1
+        cweek += 52
+        cyear -= 1
+     	end
+     	
+     	while cweek > 52
+     	  cweek -= 52
+     	  cyear += 1
+     	end
+      
+      week = Date.commercial(cyear, cweek)
+      week = week.next_week if Date.today.wday == 0
+      
+      @title = "Semaine du #{week.day} #{get_month week.month} #{week.year}"
+      sort_agenda_per_day
+    rescue Ade::Exceptions::DisconnectedError
+      flash.now[:error] = 'Vous avez été déconnecté d\'ADE. Veuillez vous reconnecter.'
+    end
   end
 
   def all
-    @title = "La totale"
-    @agenda = @ade.full_agenda
-    sort_agenda_per_day
+    begin
+      @agenda = @ade.full_agenda
+      @title = "La totale"
+      sort_agenda_per_day
+    rescue Ade::Exceptions::DisconnectedError
+      flash.now[:error] = 'Vous avez été déconnecté d\'ADE. Veuillez vous reconnecter.'
+    end
   end
   
 end
