@@ -40,6 +40,10 @@ class BookmarkController < ApplicationController
       end
     end
     
+    flash[:info] = 'flash[:info]'
+    flash.now[:info] = 'flash.now[:info]'
+    
+    flash.now[:data_url] = @url
     redirect_to controller: :agenda, action: :week
   end
   

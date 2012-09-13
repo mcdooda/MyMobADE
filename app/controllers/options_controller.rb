@@ -3,6 +3,7 @@ class OptionsController < ApplicationController
   after_filter :save_ade  
   
   def options
+    @bookmark_link = bookmark_link
     render layout: false
   end
 end

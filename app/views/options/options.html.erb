@@ -29,15 +29,8 @@
     </ul>
     
     <ul data-role="listview" data-inset="true">
-      <li data-role="list-divider">Marque pages (connexion automatique) :</li>
-      <li><%= link_to 'My Mob ADE', controller: :bookmark, action: :login,
-                username:    @ade.username,
-                password:    @ade.password,
-                domain_:     @ade.domain || '-',
-                project_id:  @ade.project_id || '-',
-                category_id: @ade.category_id,
-                branches_id: @ade.branches_id.join(',')
-      %></li>
+      <li data-role="list-divider">Marque page (connexion automatique) :</li>
+      <li><%= link_to 'ADE Mobile', @bookmark_link %></li>
     </ul>
     
     <ul data-role="listview" data-inset="true">

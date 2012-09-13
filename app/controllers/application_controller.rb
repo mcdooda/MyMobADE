@@ -20,6 +20,20 @@ class ApplicationController < ActionController::Base
     cookies[:ade] = Marshal.dump(@ade)
   end
   
+  def bookmark_link
+    {
+      controller: :bookmark,
+      action:     :login,
+      
+      username:    @ade.username,
+      password:    @ade.password,
+      domain_:     @ade.domain || '-',
+      project_id:  @ade.project_id || '-',
+      category_id: @ade.category_id,
+      branches_id: @ade.branches_id.join(',')
+    }
+  end
+  
   def load_ade
     if cookies[:ade]
       
