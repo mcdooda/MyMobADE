@@ -12,19 +12,19 @@ class BookmarkController < ApplicationController
         @ade.login params[:username], params[:password], domain
               
         # project
-        projects = @ade.projects
+        @ade.projects
         if params[:project_id] != '-'
           project_id = params[:project_id].to_i
           @ade.project_id = project_id
         end
         
         # category
-        categories = @ade.categories
+        @ade.categories
         @ade.category_id = params[:category_id]
         
         # branches
         params[:branches_id].split(',').each do |branch_id|
-          branches = @ade.branches
+          @ade.branches
           @ade.branch_id = branch_id
         end
         

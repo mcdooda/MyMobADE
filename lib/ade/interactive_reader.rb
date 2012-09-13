@@ -248,6 +248,32 @@ module Ade
       end
     end
     
+    def reconnect
+        login @username, @password, @domain
+              
+        # project
+        projects
+        unless @project_id.nil?
+          self.project_id = @project_id
+        end
+        
+        # category
+        categories
+        self.category_id = @category_id
+        
+        # branches
+        branches_id = @branches_id
+        @branches_id = []
+        branches_id.each do |branch_id|
+          branches
+          self.branch_id = branch_id
+        end
+        
+        # options
+        setup_table_view_options
+        find_current_week
+    end
+    
     def setup_table_view_options
       @page = get 'custom/modules/plannings/appletparams.jsp'
       
