@@ -40,6 +40,10 @@ module Ade
       @selected_day = nil
     end
     
+    def clear_cookies
+      @agent.cookie_jar.clear!
+    end
+    
     def debug_mode=(debug_mode)
       @debug_mode = debug_mode
     end

@@ -4,11 +4,12 @@ class BookmarkController < ApplicationController
   
   def login
     unless logged_in?
-      # log in
-      domain = nil
-      domain = params[:domain_] unless params[:domain_] == '-'
-      
       begin
+        @ade.clear_cookies
+        
+        # log in
+        domain = nil
+        domain = params[:domain_] unless params[:domain_] == '-'
         @ade.login params[:username], params[:password], domain
               
         # project
