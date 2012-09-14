@@ -11,15 +11,25 @@
     <% @agenda_per_day.each do |date, activities| %>
       <ul data-role="listview" data-inset="true">
         <li data-role="list-divider"><%= date %></li>
+        <% last_activity = nil %>
         <% activities.each do |activity| %>
+          <% unless last_activity.nil? %>
+            <% break_duration = activity.begin_time_in_minutes - last_activity.end_time_in_minutes %>
+            <% if break_duration > 15 %>
+              <li data-theme="b">
+                <em>Pause de <%= readable_duration break_duration %></em>
+              </li>
+            <% end %>
+          <% end %>
           <li>
             <h3><%= activity.name %></h3>
-            <p><strong><%= activity.hour %></strong> - <strong><%= get_activity_end activity.hour, activity.duration %></strong></p>
+            <span class="ui-li-count"><%= readable_time activity.begin_time %> - <%= readable_time activity.end_time %></span>
             <p><%= activity.rooms %></p>
             <% unless activity.teachers.blank? %>
               <p>Enseignants : <%= activity.teachers %></p>
             <% end %>
           </li>
+          <% last_activity = activity %>
         <% end %>
       </ul>
     <% end %>

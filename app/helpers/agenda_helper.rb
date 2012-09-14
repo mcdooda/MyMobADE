@@ -1,22 +1,23 @@
 module AgendaHelper
   
-  def get_activity_end(hour, duration)
-    h1, m1 = get_hour_mins hour
-    hd, md = get_hour_mins duration
-    h2 = h1 + hd
-    m2 = m1 + md
-    h2 += m2 / 60
-    m2 %= 60
-    "#{h2}h#{m2 < 10 ? "0#{m2}" : m2}"
+  def readable_time(time)
+    hours = time[:hours]
+    minutes = time[:minutes]
+    hours = "0#{hours}" if hours < 10
+    minutes = "0#{minutes}" if minutes < 10
+    "#{hours}h#{minutes}"
   end
   
-  private
-  
-  def get_hour_mins(time)
-    h, m = time.split 'h'
-    h = h.to_i
-    m = m.to_i
-    [h, m]
+  def readable_duration(duration)
+    hours = duration / 60
+    minutes = duration % 60
+    if hours > 0 && minutes > 0
+      "#{pluralize hours, 'heure'} et #{pluralize minutes, 'minute'}"
+    elsif hours > 0
+      "#{pluralize hours, 'heure'}"
+    else
+      "#{pluralize minutes, 'minute'}"
+    end
   end
   
 end

@@ -1,5 +1,5 @@
 <% if flash.now[:error] %>
-  <div class="ui-body ui-body-<%= error_theme %> ui-corner-all">
+  <div class="ui-body ui-body-<%= error_theme %> ui-corner-all login-error">
     <%= flash.now[:error] %>
   </div>
 <% end %>
@@ -18,8 +18,8 @@
     
     <!--
     <div data-role="fieldcontain" class="ui-hide-label">
-      <label for="cas">CAS (optionel) :</label>
-      <input type="text" name="cas" value="" placeholder="CAS (optionel)" />
+      <label for="cas">CAS (optionnel) :</label>
+      <input type="text" name="cas" value="" placeholder="CAS (optionnel)" />
     </div>
     -->
     

@@ -582,7 +582,7 @@ module Ade
               date: tds[0].children.first.content,
               name: tds[1].content,
               day: tds[2].content,
-              hour: tds[3].content,
+              begin_time: tds[3].content,
               duration: tds[4].content,
               teachers: tds[5].content,
               rooms: tds[6].content
