@@ -83,7 +83,7 @@ module Ade
     end
     
     def current_day
-      (Time.new.wday - 1 + 7) % 7
+      (::Time.new.wday - 1 + 7) % 7
     end
     
     def selected_day

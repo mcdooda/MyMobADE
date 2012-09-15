@@ -14,16 +14,16 @@
         <% last_activity = nil %>
         <% activities.each do |activity| %>
           <% unless last_activity.nil? %>
-            <% break_duration = activity.begin_time_in_minutes - last_activity.end_time_in_minutes %>
-            <% if break_duration > 15 %>
+            <% break_duration = activity.begin_time - last_activity.end_time %>
+            <% if break_duration.total_minutes > 15 %>
               <li data-theme="b">
-                <em>Pause de <%= readable_duration break_duration %></em>
+                <em>Pause de <%= break_duration.readable_duration %></em>
               </li>
             <% end %>
           <% end %>
           <li>
             <h3><%= activity.name %></h3>
-            <span class="ui-li-count"><%= readable_time activity.begin_time %> - <%= readable_time activity.end_time %></span>
+            <span class="ui-li-count"><%= activity.begin_time %> - <%= activity.end_time %></span>
             <p><%= activity.rooms %></p>
             <% unless activity.teachers.blank? %>
               <p>Enseignants : <%= activity.teachers %></p>
