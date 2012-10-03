@@ -3,7 +3,8 @@ class OptionsController < ApplicationController
   after_filter :save_ade  
   
   def options
-    @bookmark_link = bookmark_link
+    @bookmark_week_link = bookmark_link
+    @bookmark_day_link = bookmark_link :day
     render layout: false
   end
 end

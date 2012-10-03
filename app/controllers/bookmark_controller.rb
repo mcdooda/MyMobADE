@@ -37,11 +37,12 @@ class BookmarkController < ApplicationController
         log_in
       rescue Ade::Exceptions::LoginError
         redirect_to controller: :login, action: :login
-        return
       end
     end
     
-    redirect_to controller: :agenda, action: :week
+    view = params[:view]
+    view = :week if view != 'day'
+    redirect_to controller: :agenda, action: view
   end
   
 end
