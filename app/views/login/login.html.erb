@@ -1,6 +1,6 @@
-<% if flash.now[:error] %>
+<% if flash[:error] %>
   <div class="ui-body ui-body-<%= error_theme %> ui-corner-all login-error">
-    <%= flash.now[:error] %>
+    <%= flash[:error] %>
   </div>
 <% end %>
 

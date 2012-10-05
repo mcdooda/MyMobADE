@@ -7,6 +7,7 @@ class LoginController < ApplicationController
   def login
     if logged_in?
       redirect_to controller: :agenda, action: :all
+      return
     else
       clear_cookies
       @title = 'Connexion'
@@ -20,7 +21,7 @@ class LoginController < ApplicationController
           @ade.login login, password, domain
           redirect_to action: :project
         rescue Ade::Exceptions::LoginError
-          flash.now[:error] = 'Mauvais login ou mot de passe'
+          flash.now[:error] = 'Mauvais login ou mot de passe.'
         end
         
       end
@@ -47,6 +48,19 @@ class LoginController < ApplicationController
       redirect_to action: :branch
     else
       @categories = @ade.categories
+      if @categories.empty?
+        flash[:error] = 'La sélection de votre emploi du temps a échoué.'
+        redirect_to action: :login
+        return
+      else
+        @categories.each do |category|
+          if category[:name].blank?
+            flash[:error] = 'La sélection de votre emploi du temps a échoué.'
+            redirect_to action: :login
+            return
+          end
+        end
+      end
     end
   end
 
@@ -56,6 +70,11 @@ class LoginController < ApplicationController
     if params[:leaf] != "true"
       @ade.branch_id = params[:branch_id] if params[:branch_id]
       @branches = @ade.branches
+      if @branches.empty?
+        flash[:error] = 'La sélection de votre emploi du temps a échoué.'
+        redirect_to action: :login
+        return
+      end
       @leaf = @ade.leaf?
     else
       @ade.branch_id = params[:branch_id]

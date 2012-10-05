@@ -36,15 +36,20 @@ class ApplicationController < ActionController::Base
   end
   
   def load_ade
-    if cookies[:ade]
-      
-      # forces reloading and fixes the require_dependency bug on heroku
-      Ade::InteractiveReader
-      Ade::Schools::Ujf
-      
-      @ade = Marshal.load cookies[:ade]
-    else
-      @ade = Ade::InteractiveReader.new Ade::Schools::Ujf.new
+    begin
+      if cookies[:ade]
+        # forces reloading and fixes the require_dependency bug on heroku
+        Ade::InteractiveReader
+        Ade::Schools::Ujf
+        
+        @ade = Marshal.load cookies[:ade]
+      else
+        @ade = Ade::InteractiveReader.new Ade::Schools::Ujf.new
+      end
+    rescue ArgumentError
+      flash[:error] = 'La session n\'est plus valide.'
+      redirect_to controller: :login, action: :login
+      return
     end
   end
   
