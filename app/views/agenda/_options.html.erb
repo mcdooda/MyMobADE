@@ -7,7 +7,7 @@
   </ul>
 
   <ul data-role="listview" data-inset="true">
-    <li data-role="list-divider">Marque page :</li>
+    <li data-role="list-divider">Marques page :</li>
     <li data-icon="star"><%= link_to 'Liens permanents', '#bookmarks-popup', { 'data-rel' => 'popup' } %></li>
   </ul>
 
@@ -19,14 +19,12 @@
 
 <div data-role="popup" id="bookmarks-popup" data-dismissible="false">
   <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-  <ul data-role="listview" data-inset="true">
-    <li>
-      Semaine courante
+    <p>
+      <%= link_to 'Semaine courante', @bookmark_week_link %>
       <input type="text" value="<%= "#{root_url[0...-1]}#{url_for @bookmark_week_link}" %>" />
-    </li>
-    <li>
-      Aujourd'hui
+    </p>
+    <p>
+      <%= link_to 'Aujourd\'hui', @bookmark_day_link %>
       <input type="text" value="<%= "#{root_url[0...-1]}#{url_for @bookmark_day_link}" %>" />
-    </li>
-  </ul>
+    </p>
 </div>
