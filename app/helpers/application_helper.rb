@@ -16,4 +16,8 @@ module ApplicationHelper
     'e'
   end
   
+  def break_theme
+    'd'
+  end
+  
 end

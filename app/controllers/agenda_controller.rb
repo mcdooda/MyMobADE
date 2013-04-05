@@ -1,10 +1,15 @@
 # coding: utf-8
 
 class AgendaController < ApplicationController
-  before_filter :check_logged_in, :load_ade
+  before_filter :check_logged_in, :load_ade, :generate_bookmarks
   after_filter :save_ade
 
   private
+  
+  def generate_bookmarks
+    @bookmark_week_link = bookmark_link
+    @bookmark_day_link = bookmark_link :day
+  end
 
   def sort_agenda_per_day
     @agenda_per_day = {}

@@ -1,0 +1,32 @@
+<div data-role="panel" data-display="overlay" id="options-panel">
+  <ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Afficher :</li>
+    <li data-icon="bars"><%= link_to 'Jour', controller: :agenda, action: :day %></li>
+    <li data-icon="bars"><%= link_to 'Semaine', controller: :agenda, action: :week %></li>
+    <li data-icon="bars"><%= link_to 'Tout', controller: :agenda, action: :all %></li>
+  </ul>
+
+  <ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Marque page :</li>
+    <li data-icon="star"><%= link_to 'Liens permanents', '#bookmarks-popup', { 'data-rel' => 'popup' } %></li>
+  </ul>
+
+  <ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Session :</li>
+    <li data-icon="delete"><%= link_to 'Déconnexion', controller: :logout, action: :logout %></li>
+  </ul>
+</div>
+
+<div data-role="popup" id="bookmarks-popup" data-dismissible="false">
+  <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+  <ul data-role="listview" data-inset="true">
+    <li>
+      Semaine courante
+      <input type="text" value="<%= "#{root_url[0...-1]}#{url_for @bookmark_week_link}" %>" />
+    </li>
+    <li>
+      Aujourd'hui
+      <input type="text" value="<%= "#{root_url[0...-1]}#{url_for @bookmark_day_link}" %>" />
+    </li>
+  </ul>
+</div>

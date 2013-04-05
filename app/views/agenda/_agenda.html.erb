@@ -1,3 +1,5 @@
+<%= render :partial => 'agenda/options' %>
+
 <% if flash.now[:error] %>
   <div class="ui-body ui-body-<%= error_theme %> ui-corner-all">
     <%= flash.now[:error] %>
@@ -16,7 +18,7 @@
           <% unless last_activity.nil? %>
             <% break_duration = activity.begin_time - last_activity.end_time %>
             <% if break_duration.total_minutes > 15 %>
-              <li data-theme="b">
+              <li data-theme="<%= break_theme %>">
                 <em>Pause de <%= break_duration.readable_duration %></em>
               </li>
             <% end %>
